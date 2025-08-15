@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to bottom, white);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 380px;
+  padding: 20px;
+}
+
+.login-box {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 30px 24px;
+  text-align: center;
+}
+
+.login-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  max-width: 90px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #EF2F7E;
+}
+
+.input-group {
+  margin-bottom: 18px;
+  text-align: left;
+  color: black;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: black;
+  margin-bottom: 6px;
+  display: block;
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid black;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+  border-color: #EF2F7E;
+}
+
+.input-group input:focus {
+  border-color: #F279A1;
+ 
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #EF2F7E;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 8px;
+  /* box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1); */
+}
+
+.btn:hover {
+  background-color:#F279A1; 
+  
+}
+
+.links {
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+.links a {
+  color: #EF2F7E;
+  text-decoration: none;
+  display: block;
+  margin-top: 10px;
+}
+
+.links a:hover {
+  text-decoration: underline;
+  color:#F279A1; 
+  
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .login-box {
+    padding: 24px 16px;
+  }
+
+  .logo img {
+    max-width: 70px;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .input-group {
+    margin-bottom: 14px;
+  }
+
+  .input-group label {
+    font-size: 13px;
+  }
+
+  .input-group input {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .btn {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .links {
+    font-size: 13px;
+    margin-top: 16px;
+  }
+
+  .links a {
+    margin-top: 8px;
+  }
+}

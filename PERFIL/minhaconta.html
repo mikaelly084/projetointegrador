@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Conta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="CSS/minhaconta.css">
+</head>
+<body>
+
+
+  <div class="header">Minha Conta</div>
+
+  <div class="profile">
+    <div class="profile-pic-container">
+      <label for="upload-photo">
+        <img id="profile-image" src="images/botao-redondo-da-conta-com-o-usuario-dentro.png" alt="Foto de perfil">
+        <div class="edit-icon"><i class="fas fa-camera"></i></div>
+      </label>
+      <input type="file" id="upload-photo" accept="image/*" style="display: none">
+    </div>
+    <div class="profile-info">
+      <h3>Joyce Santos</h3>
+      <p>Dentista</p>
+    </div>
+  </div>
+
+  <a class="section" href="perfiluser.html">
+    <span><i class="fas fa-user"></i>Meu Perfil</span>
+    <i class="fas fa-chevron-right"></i>
+  </a>
+  <div class="section"><span><i class="fas fa-headset"></i><a href="meajuda.html">Me ajuda</a></span> <i class="fas fa-chevron-right"></i></div>
+  <div class="section"><span><i class="fas fa-check-circle"></i> <a href="dv.html">Validação de documentos</a></span> <i class="fas fa-chevron-right"></i></div>
+  <div class="section"><span><i class="fas fa-file-circle-xmark"></i><a href="termoscancelamento.html" style="color: inherit; text-decoration: none;">Termos de Cancelamento</a></span><i class="fas fa-chevron-right"></i></div>
+  <div class="section"><span><i class="fas fa-file-alt"></i><a href="termosdeuso.html" style="color: inherit; text-decoration: none;">Termos de uso</a></span> <i class="fas fa-chevron-right"></i></div>
+  <div class="section"><span><i class="fas fa-shield-alt"></i><a href="privacidade.html" style="color: inherit; text-decoration: none;">Política de privacidade</a></span> <i class="fas fa-chevron-right"></i></div>
+  <div class="section" id="logout-btn"><span><i class="fas fa-sign-out-alt"></i>Sair do aplicativo</span></div>
+
+<button class="btn-emergencia" onclick="enviarEmergencia()">
+  <i class="fas fa-exclamation-triangle"></i> Emergência
+</button>
+
+<div class="bottom-nav">
+  <a href="pedidos.html">
+    <i class="fas fa-box"></i>
+    <div>Pedidos</div>
+  </a>
+  <a href="aceitos.html">
+    <i class="fas fa-check"></i>
+    <div>Aceitos</div>
+  </a>
+  <a href="realizados.html" class="active">
+    <i class="fas fa-clock"></i>
+    <div>Realizados</div>
+  </a>
+  <a href="minhaconta.html">
+    <i class="fas fa-user"></i>
+    <div>Minha Conta</div>
+  </a>
+</div>
+
+
+  <!-- Modal de confirmação -->
+  <div class="modal-overlay" id="confirm-modal">
+    <div class="modal">
+      <h2>Deseja realmente sair?</h2>
+      <p>Você será desconectado da sua conta.</p>
+      <div class="modal-buttons">
+        <button id="confirm-yes">Sim</button>
+        <button id="confirm-no">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="JS/minhaconta.js"></script>
+</body>
+</html>

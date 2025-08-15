@@ -1,0 +1,290 @@
+:root {
+  --rosa-principal: #EF2F7E;
+  --rosa-claro: #F279A1;
+  --rosa-hover: #F9A4B4;
+  --texto-principal: #333;
+  --texto-secundario: #666;
+  --estrela: gold;
+  --sombra: rgba(0, 0, 0, 0.08);
+  --radius: 10px;
+}
+
+/* ===== Layout Geral ===== */
+body {
+  background-color: #fff;
+  font-family: 'Inter', sans-serif;
+  color: var(--texto-principal);
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  max-width: 720px;
+  width: 100%;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* ===== Botão Voltar ===== */
+.btn-voltar {
+  margin-bottom: 16px;
+}
+
+.btn-voltar a {
+  background-color: var(--rosa-principal);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.btn-voltar a:hover {
+  background: var(--rosa-claro);
+  transform: translateY(-2px);
+}
+
+/* ===== Perfil ===== */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.profile-pic-container {
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.profile-pic-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--texto-principal);
+  cursor: pointer;
+}
+
+.edit-icon {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  background-color: var(--rosa-principal);
+  border-radius: 50%;
+  padding: 6px;
+  font-size: 12px;
+  color: white;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Botões de Ação ===== */
+.botoes {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-editar,
+.btn-compartilhar {
+  background-color: var(--rosa-principal);
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-editar:hover,
+.btn-compartilhar:hover {
+  background: var(--rosa-claro);
+  transform: translateY(-2px);
+}
+
+/* ===== Seções ===== */
+section {
+  background: white;
+  margin: 15px 0 20px;
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px var(--sombra);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+section h3 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: var(--rosa-principal);
+}
+
+.conquistas h3 span {
+  font-size: 14px;
+  color: var(--rosa-principal);
+}
+
+/* ===== Itens ===== */
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.item img {
+  width: 32px;
+  margin-right: 10px;
+}
+
+/* ===== Estatísticas ===== */
+.stats {
+  font-size: 14px;
+  color: var(--texto-secundario);
+  margin-top: 10px;
+}
+
+/* ===== Estrelas ===== */
+.estrelas span {
+  font-size: 30px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.estrelas span.ativa {
+  color: var(--estrela);
+}
+
+/* ===== Comentários ===== */
+.comentario {
+  background-color: #f8f8f8;
+  border-left: 4px solid var(--rosa-principal);
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+#enviarComentario {
+  margin-top: 10px;
+  background: var(--rosa-principal);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  height: 34px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 14px;
+  transition: background 0.3s ease;
+}
+
+#enviarComentario:hover {
+  background: var(--rosa-hover);
+}
+
+/* ===== Mensagem Copiado ===== */
+#copiado-msg {
+  display: none;
+  position: fixed;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+#copiado-msg.mostrar {
+  display: block;
+  opacity: 1;
+}
+
+/* ===== Menu Compartilhar ===== */
+.menu-compartilhar {
+  display: none;
+  position: absolute;
+  margin-top: 10px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 160px;
+}
+
+.menu-compartilhar.show {
+  display: flex;
+}
+
+.menu-compartilhar button,
+.menu-compartilhar a {
+  background-color: white;
+  color: black;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  text-align: left;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.menu-compartilhar button:hover,
+.menu-compartilhar a:hover {
+  background: var(--rosa-principal);
+  color: white;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 600px) {
+  .profile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .botoes {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .btn-editar,
+  .btn-compartilhar {
+    width: 100wh;
+    max-width: 100wh;
+  }
+}
+
+/* ===== Animação ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

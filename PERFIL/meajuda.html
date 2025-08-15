@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Me Ajuda</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      padding: 20px;
+      background-color: #ffffff;
+    }
+
+    .btn-voltar {
+      margin-bottom: 20px;
+    }
+
+    .btn-voltar a {
+      background-color: #EF2F7E;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-voltar a:hover {
+      background-color: #F9A4B4;
+      
+    }
+
+    h1, h2 {
+      color: #EF2F7E;
+    }
+
+    .ajuda-item:hover {
+      background-color: #EF2F7E;
+      color: #ffffff;
+    }
+    .ajuda-item {
+      background: white;
+      color: black;
+      border-radius: 12px;
+      padding: 15px;
+      margin: 10px 0;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .ajuda-item i {
+      margin-right: 10px;
+    }
+
+    .ajuda-pergunta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ajuda-resposta {
+      margin-top: 10px;
+      display: none;
+      color: black;
+      background: white;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .ajuda-item.ativo .ajuda-resposta {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="btn-voltar">
+    <a href="minhaconta.html" aria-label="Voltar para minha conta"><span aria-hidden="true">◀</span> Voltar</a>
+  </div>
+
+  <h1>Me Ajuda</h1>
+
+  <h2><i class="fas fa-question-circle"></i> Dúvidas Frequentes</h2>
+
+  <div class="ajuda-item">
+    <div class="ajuda-pergunta">
+      <span><i class="fas fa-circle-info"></i>Como funciona a plataforma</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="ajuda-resposta">
+      Nossa plataforma conecta clientes a profissionais qualificados em diversas áreas. Você faz um pedido, recebe propostas e escolhe o profissional ideal.
+    </div>
+  </div>
+
+  <div class="ajuda-item">
+    <div class="ajuda-pergunta">
+      <span><i class="fas fa-handshake-angle"></i>Como contratar um profissional</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="ajuda-resposta">
+      Após publicar seu pedido, profissionais interessados enviam propostas. Compare avaliações, preços e clique em “Contratar” para iniciar o serviço.
+    </div>
+  </div>
+
+  <div class="ajuda-item">
+    <div class="ajuda-pergunta">
+      <span><i class="fas fa-ban"></i>Como cancelar um serviço</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="ajuda-resposta">
+      Acesse "Meus Pedidos", selecione o serviço e clique em “Cancelar”. Pode haver regras específicas dependendo do andamento do atendimento.
+    </div>
+  </div>
+
+  <h2><i class="fas fa-headset"></i> Fale Conosco</h2>
+
+  <div class="ajuda-item">
+    <div class="ajuda-pergunta">
+      <span><i class="fab fa-whatsapp"></i>Atendimento via WhatsApp</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="ajuda-resposta">
+      Atendimento rápido via WhatsApp para dúvidas e suporte. <a href="https://wa.me/?text=${url}" style="color: #EF2F7E;">Clique Aqui!</a> para iniciar o atendimento com nossa equipe.
+    </div>
+  </div>
+
+  <div class="ajuda-item">
+    <div class="ajuda-pergunta">
+      <span><i class="fas fa-envelope"></i>Enviar e-mail</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="ajuda-resposta">
+      Envie um e-mail para <strong>contato@fenmi.com.br</strong> com sua dúvida ou problema. Respondemos em até 24h úteis.
+    </div>
+  </div>
+
+  <div class="ajuda-item">
+    <div class="ajuda-pergunta">
+      <span><i class="fas fa-comments"></i>Chat com suporte</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="ajuda-resposta">
+      Nosso chat está disponível de segunda a sexta, das 8h às 18h, para ajudá-lo ao vivo pela plataforma.
+    </div>
+  </div>
+
+  <h2><i class="fas fa-lock"></i> Segurança e Conta</h2>
+
+  <div class="ajuda-item">
+    <div class="ajuda-pergunta">
+      <span><i class="fas fa-user-shield"></i>Minha conta foi invadida</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="ajuda-resposta">
+      Troque sua senha imediatamente e entre em contato com o suporte. Nunca compartilhe seus dados com terceiros.
+    </div>
+  </div>
+
+  <div class="ajuda-item">
+    <div class="ajuda-pergunta">
+      <span><i class="fas fa-user-times"></i>Excluir minha conta</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="ajuda-resposta">
+      <p>Se deseja encerrar sua conta, você pode solicitar a exclusão definitiva. Essa ação é irreversível e todos os seus dados serão apagados.</p>
+      <p>Vá em <strong>Meu Perfil</strong> &gt; <strong>Editar Perfil</strong> &gt; <strong>Excluir Conta</strong> e confirme com seus dados.</p>
+    </div>
+  </div>
+
+  <div class="ajuda-item">
+    <div class="ajuda-pergunta">
+      <span><i class="fas fa-file-contract"></i>Política de privacidade</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="ajuda-resposta">
+      Seus dados são protegidos conforme a LGPD. Usamos suas informações apenas para melhorar sua experiência na plataforma.
+    </div>
+  </div>
+
+  <script>
+    const itens = document.querySelectorAll('.ajuda-item');
+    itens.forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('ativo');
+      });
+    });
+  </script>
+
+</body>
+</html>

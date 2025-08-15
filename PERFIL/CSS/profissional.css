@@ -1,0 +1,205 @@
+/* Reset e variáveis */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+body {
+  font-family: var(--fonte);
+  background-color: var(--branco);
+  color: var(--texto);
+}
+
+/* Layout base */
+header,
+footer {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Hero */
+.hero {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 10%;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color:#EF2F7E;
+}
+
+.hero-text span {
+  color: #EF2F7E;
+}
+
+.hero-text p {
+  margin: 20px 0;
+  max-width: 400px;
+}
+
+.hero button,
+.button {
+  background-color:#EF2F7E;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero button:hover,
+.button:hover {
+  background-color: #F279A1;
+}
+
+/* Estatísticas */
+.stats {
+  background: #EF2F7E;
+  padding: 30px 10%;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Seções coloridas */
+.section-blue {
+  color: var(--texto);
+  padding: 50px 10%;
+}
+
+.section-blue h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #EF2F7E;
+}
+
+/* Cartões e etapas */
+.cards,
+.steps {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Rodapé */
+footer {
+  background: #edede956;
+}
+
+footer .footer-section {
+  flex: 1 1 200px;
+  margin: 20px;
+  color: #EF2F7E;
+}
+
+.footer-links a {
+  display: block;
+  margin: 5px 0;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #EF2F7E;
+}
+
+.b2 {
+  background-color: #EF2F7E;
+  color: white;
+  border-radius: 6px;
+  max-width: 200px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.b2:hover {
+  background-color: #F279A1;
+  
+}
+
+.bottom-footer {
+  background-color: #EF2F7E;
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+  color: white;
+}
+
+.bottom-footer a {
+  color: white;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.bottom-footer a:hover {
+ 
+  color: white;
+  text-decoration: none ;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero,
+  .stats,
+  .section-orange {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero img,
+  .section-orange img {
+    margin-top: 20px;
+    max-width: 90%;
+    height: auto;
+  }
+
+  .stats {
+    gap: 16px;
+    padding: 10px 0;
+  }
+
+  .stats .stat-item {
+    width: 100%;
+    max-width: 300px;
+  }
+}

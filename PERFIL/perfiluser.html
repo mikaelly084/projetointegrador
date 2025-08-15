@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Perfil do usuário com conquistas, avaliações e opções de compartilhamento." />
+  <title>Perfil de Usuário</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="CSS/perfiluser.css">
+ 
+</head>
+<body>
+
+<main>
+  <div class="btn-voltar">
+    <a href="minhaconta.html" aria-label="Voltar para minha conta"><span aria-hidden="true">◀</span> Voltar</a>
+  </div>
+
+  <div class="profile">
+    <div class="profile-pic-container">
+      <label for="upload-photo">
+        <img id="profile-image" src="images/botao-redondo-da-conta-com-o-usuario-dentro.png" alt="Foto de perfil">
+        <div class="edit-icon"><i class="fas fa-camera"></i></div>
+      </label>
+      <input type="file" id="upload-photo" accept="image/*" style="display: none">
+    </div>
+    <div class="profile-info">
+      <h3>Joyce Santos</h3>
+      <p>Dentista</p>
+    </div>
+  </div>
+
+  <div class="botoes">
+    <a href="infouser.html" class="btn-editar" role="button" aria-label="Editar perfil">✏️Editar perfil</a>
+    <button type="button" class="btn-compartilhar" id="btnCompartilhar" aria-label="Compartilhar perfil">🔗 Copiar link</button>
+  </div>
+
+  <div class="menu-compartilhar" id="menuCompartilhar">
+    <button onclick="copiarLink()">📋 Copiar link</button>
+    <a href="#" target="_blank" id="btnWhatsApp">📱 WhatsApp</a>
+    <a href="#" target="_blank" id="btnFacebook">📘 Facebook</a>
+  </div>
+
+  <section class="conquistas">
+    <h3>Minhas conquistas <span>(1/3)</span></h3>
+    <div class="item">
+      <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Ícone da conquista Ninja verificado" />
+      <span>Verificado</span>
+    </div>
+    <div class="stats">
+      <p>📌 9 serviços negociados</p>
+      <p>📅 Cadastrado desde agosto de 2021</p>
+    </div>
+  </section>
+
+  <section id="avaliacoes">
+    <h3 style="color: #EF2F7E;">Nota Média: <span id="nota-media">0.0</span> ⭐</h3>
+    <div class="estrelas" id="selecao-estrelas">
+      <span data-value="1">★</span>
+      <span data-value="2">★</span>
+      <span data-value="3">★</span>
+      <span data-value="4">★</span>
+      <span data-value="5">★</span>
+    </div>
+    <textarea id="comentario" placeholder="Escreva seu comentário..." rows="4" style="width: 100%; margin-top: 10px;"></textarea>
+    <button id="enviarComentario">Enviar Avaliação</button>
+    <div id="lista-comentarios" style="margin-top: 20px;"></div>
+  </section>
+
+  <div id="copiado-msg">🔗 Link copiado!</div>
+</main>
+
+<script src="JS/perfiluser.js"></script>
+</body>
+</html>

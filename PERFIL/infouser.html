@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meu Perfil</title>
+  <link rel="stylesheet" href="CSS/infouser.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+ 
+
+  <div class="form-container">
+    <div class="btn-voltar">
+    <a href="perfiluser.html">◀ Voltar</a>
+  </div>
+    <h2>Meus Dados</h2>
+
+    <div class="info">
+      <p><strong>Nome:</strong> Joyce Santos</p>
+      <p><strong>E-mail:</strong> Joyce.santos@getninjas.com.br</p>
+      <p><strong>Telefone:</strong> (11) 94936-7736</p>
+    </div>
+
+    <form id="perfilForm" class="form-box">
+      <h2>Editar Perfil</h2>
+
+      <input type="text" name="nome" placeholder="Nome" required />
+      <input type="email" name="email" placeholder="E-mail" required />
+      <input type="tel" name="telefone" placeholder="Telefone" required />
+      <input type="text" name="cep" placeholder="CEP" required />
+      <input type="text" name="endereco" placeholder="Endereço" required />
+      <input type="text" name="cpf" placeholder="CPF" required />
+
+      <button type="submit" class="btn salvar">Salvar</button>
+      <button type="button" id="btnExcluir" class="btn excluir">Excluir Conta</button>
+    </form>
+  </div>
+
+  <!-- Modal de Logout -->
+  <div id="confirm-modal" class="modal">
+    <div class="modal-content">
+      <h3>Deseja realmente sair?</h3>
+      <div class="modal-botoes">
+        <button id="confirm-yes" class="btn excluir">Sim, sair</button>
+        <button id="confirm-no" class="btn cancelar">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Excluir Conta -->
+  <div id="modalExcluir" class="modal">
+    <div class="modal-content">
+      <h3>Tem certeza que deseja excluir sua conta?</h3>
+      <p>Essa ação não poderá ser desfeita.</p>
+      <div class="modal-botoes">
+        <button id="confirmarExcluir" class="btn excluir">Sim, excluir</button>
+        <button id="cancelarExcluir" class="btn cancelar">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="JS/infouser.js"></script>
+</body>
+</html>
