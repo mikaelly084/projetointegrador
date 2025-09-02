@@ -59,3 +59,61 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 })
+
+// ===== Selecionar o formulário =====
+const perfilForm = document.getElementById("perfilForm")
+
+// Carregar dados salvos no localStorage ao abrir a página
+window.addEventListener("load", () => {
+  const nome = localStorage.getItem("nomeUsuario") || ""
+  const email = localStorage.getItem("emailUsuario") || ""
+  const telefone = localStorage.getItem("telefoneUsuario") || ""
+  const cep = localStorage.getItem("cepUsuario") || ""
+  const endereco = localStorage.getItem("enderecoUsuario") || ""
+  const cpf = localStorage.getItem("cpfUsuario") || ""
+
+  // Preenche os inputs com os dados já salvos
+  perfilForm.nome.value = nome
+  perfilForm.email.value = email
+  perfilForm.telefone.value = telefone
+  perfilForm.cep.value = cep
+  perfilForm.endereco.value = endereco
+  perfilForm.cpf.value = cpf
+})
+
+// Salvar dados no localStorage quando enviar o formulário
+perfilForm.addEventListener("submit", (e) => {
+  e.preventDefault()
+
+  localStorage.setItem("nomeUsuario", perfilForm.nome.value)
+  localStorage.setItem("emailUsuario", perfilForm.email.value)
+  localStorage.setItem("telefoneUsuario", perfilForm.telefone.value)
+  localStorage.setItem("cepUsuario", perfilForm.cep.value)
+  localStorage.setItem("enderecoUsuario", perfilForm.endereco.value)
+  localStorage.setItem("cpfUsuario", perfilForm.cpf.value)
+
+  alert("Dados salvos com sucesso!")
+  window.location.href = "perfiluser.html" // volta para a página do perfil
+})
+
+// ===== Excluir conta =====
+const btnExcluir = document.getElementById("btnExcluir")
+const modalExcluir = document.getElementById("modalExcluir")
+const confirmarExcluir = document.getElementById("confirmarExcluir")
+const cancelarExcluir = document.getElementById("cancelarExcluir")
+
+btnExcluir.addEventListener("click", () => {
+  modalExcluir.style.display = "flex"
+})
+
+cancelarExcluir.addEventListener("click", () => {
+  modalExcluir.style.display = "none"
+})
+
+confirmarExcluir.addEventListener("click", () => {
+  // Limpa tudo do localStorage
+  localStorage.clear()
+  alert("Conta excluída com sucesso!")
+  window.location.href = "perfiluser.html"
+})
+

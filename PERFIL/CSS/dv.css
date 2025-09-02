@@ -1,22 +1,58 @@
-/* RESET */
+/* VARIÁVEIS DE TEMA */
+:root {
+  --rosa-principal: #EF2F7E;
+  --rosa-claro: #F279A1;
+  --rosa-hover: #F9A4B4;
+
+  --texto-principal: #000000;
+  --texto-secundario: #555;
+
+  --bg-principal: #ffffff;
+  --bg-secundario: #f8f8f8;
+  --comentario-bg: #f2f2f2;
+  --borda-clara: #ddd;
+  --cinza-placeholder: #aaa;
+  --sombra: rgba(0, 0, 0, 0.08);
+}
+
+/* DARK MODE */
+body.dark-mode {
+  --texto-principal: #f1f1f1;
+  --texto-secundario: #ccc;
+
+  --bg-principal: #121212;
+  --bg-secundario: #1E1E1E;
+  --comentario-bg: #2a2a2a;
+  --borda-clara: #444;
+  --cinza-placeholder: #888;
+  --sombra: rgba(255, 255, 255, 0.05);
+}
+
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* BASE */
+
 body {
   font-family: 'Arial', sans-serif;
-  background-color: white;
+  background-color: var(--bg-principal);
+  color: var(--texto-principal);
   padding: 30px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* CONTAINER */
 .container {
   max-width: 800px;
   margin: auto;
   padding: 20px;
   font-size: 16px;
+  background-color: var(--bg-principal);
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
 }
 
 /* BOTÃO VOLTAR */
@@ -24,37 +60,37 @@ body {
   display: inline-block;
   margin-bottom: 20px;
   padding: 10px 16px;
-  background-color: #EF2F7E;
+  background-color: var(--rosa-principal);
   color: white;
   text-decoration: none;
   border-radius: 8px;
-  font-weight: 800;
+  font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
 .voltar:hover {
-  background-color: #F279A1;
+  background-color: var(--rosa-claro);
 }
 
 /* TÍTULOS */
 h2, h3 {
-  color: #EF2F7E;
+  color: var(--rosa-principal);
   margin-bottom: 10px;
 }
 
 /* ETAPAS */
 .etapa {
-  background: #fff;
+  background: var(--bg-principal);
   padding: 20px;
   border-radius: 10px;
   margin-top: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px var(--sombra);
   transition: 0.3s ease;
 }
 
 .etapa:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px var(--sombra);
 }
 
 /* FORMULÁRIO */
@@ -62,15 +98,17 @@ label {
   display: block;
   margin-top: 16px;
   font-weight: bold;
-  
+  color: var(--texto-principal);
 }
 
 input[type="file"] {
   margin-top: 8px;
   width: 100%;
   border-radius: 3px;
-  height: 50px;
+  height: 26px;
   font-size: 16px;
+  color: var(--texto-principal);
+  border: 1px solid var(--borda-clara);
 }
 
 /* BOTÕES */
@@ -78,19 +116,17 @@ button {
   margin-top: 20px;
   width: 200px;
   padding: 12px 20px;
-  background-color: #EF2F7E;
+  background-color: var(--rosa-principal);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease;
-  
 }
 
 button:hover {
-  background-color: #F279A1;
-
+  background-color: var(--rosa-hover);
 }
 
 /* MENSAGENS */
@@ -104,22 +140,7 @@ button:hover {
 }
 
 .mensagem.sucesso {
-  color: #14b8a6;
-}
-
-/* STATUS */
-.status {
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-.aguardando {
-  color: black;
-}
-
-/* ÍCONE */
-.icone-etapa {
-  margin-right: 8px;
+  color: var(--azul-detalhe, #58ccf8);
 }
 
 /* RESPONSIVIDADE */

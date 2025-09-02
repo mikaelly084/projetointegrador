@@ -1,0 +1,116 @@
+/* ==================================================
+   RESET BÁSICO
+================================================== */
+body {
+  font-family: 'Inter', sans-serif;
+  padding: 20px;
+  background-color: var(--bg-principal);
+  color: var(--texto-principal);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ==================================================
+   VARIÁVEIS (Modo Claro)
+================================================== */
+:root {
+  --rosa-principal: #EF2F7E;
+  --rosa-claro: #F279A1;
+  --rosa-hover: #F9A4B4;
+
+  --texto-principal: #000000;
+  --texto-secundario: #555;
+
+  --bg-principal: #ffffff;
+  --bg-secundario: #f8f8f8;
+  --comentario-bg: #f2f2f2;
+  --borda-clara: #ddd;
+  --cinza-placeholder: #aaa;
+  --sombra: rgba(0, 0, 0, 0.08);
+}
+
+/* ==================================================
+   VARIÁVEIS (Modo Escuro)
+================================================== */
+body.dark-mode {
+  --texto-principal: #f1f1f1;
+  --texto-secundario: #ccc;
+
+  --bg-principal: #121212;
+  --bg-secundario: #1E1E1E;
+  --comentario-bg: #2a2a2a;
+  --borda-clara: #444;
+  --cinza-placeholder: #888;
+  --sombra: rgba(255, 255, 255, 0.05);
+}
+
+/* ==================================================
+   BOTÃO VOLTAR
+================================================== */
+.btn-voltar {
+  margin-bottom: 20px;
+}
+
+.btn-voltar a {
+  background-color: var(--rosa-principal);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-voltar a:hover {
+  background-color: var(--rosa-hover);
+}
+
+/* ==================================================
+   TÍTULOS
+================================================== */
+h1 {
+  color: var(--rosa-principal);
+}
+
+/* ==================================================
+   ITENS DE AJUDA
+================================================== */
+.ajuda-item {
+  background: var(--bg-secundario);
+  color: var(--texto-principal);
+  border-radius: 12px;
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0 1px var(--sombra);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ajuda-item:hover {
+  color: var(--rosa-principal);
+}
+
+.ajuda-item i {
+  margin-right: 10px;
+}
+
+.ajuda-pergunta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ajuda-resposta {
+  margin-top: 10px;
+  display: none;
+  color: var(--texto-secundario);
+  background: var(--comentario-bg);
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.ajuda-item.ativo .ajuda-resposta {
+  display: block;
+}

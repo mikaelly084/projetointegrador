@@ -6,74 +6,125 @@
   <title>Minha Conta</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="CSS/minhaconta.css">
 </head>
 <body>
 
+  <!-- Cabeçalho -->
+  <header class="header">
+    <h1 class="titulo">Minha Conta</h1>
+    
+    <!-- Botão Dark Mode -->
+    <button class="btn-dark" id="toggleDark">🌙 Modo Escuro</button>
+  </header>
 
-  <div class="header">Minha Conta</div>
-
+  <!-- Perfil -->
   <div class="profile">
     <div class="profile-pic-container">
-      <label for="upload-photo">
-        <img id="profile-image" src="images/botao-redondo-da-conta-com-o-usuario-dentro.png" alt="Foto de perfil">
-        <div class="edit-icon"><i class="fas fa-camera"></i></div>
+      <input type="file" id="upload-photo" accept="image/*" style="display:none">
+
+      <label for="upload-photo" class="profile-label">
+        <div class="profile-icon" id="profile-container">
+          <i class="fas fa-user" id="default-icon"></i>
+          <img id="profile-image" style="display:none;" alt="Foto de perfil">
+        </div>
+        <div class="edit-icon">
+          <i class="fas fa-camera"></i>
+        </div>
       </label>
-      <input type="file" id="upload-photo" accept="image/*" style="display: none">
+
+      <button id="remove-photo" class="remove-btn" style="display:none;">
+        <i class="fas fa-trash"></i>
+      </button>
     </div>
+
     <div class="profile-info">
-      <h3>Joyce Santos</h3>
-      <p>Dentista</p>
+      <h3 id="nomeUsuario">Usuário</h3>
+      <p id="profissaoUsuario">Profissão</p>
     </div>
   </div>
 
+  <!-- Seções -->
   <a class="section" href="perfiluser.html">
-    <span><i class="fas fa-user"></i>Meu Perfil</span>
+    <span><i class="fas fa-user"></i> Meu Perfil</span>
     <i class="fas fa-chevron-right"></i>
   </a>
-  <div class="section"><span><i class="fas fa-headset"></i><a href="meajuda.html">Me ajuda</a></span> <i class="fas fa-chevron-right"></i></div>
-  <div class="section"><span><i class="fas fa-check-circle"></i> <a href="dv.html">Validação de documentos</a></span> <i class="fas fa-chevron-right"></i></div>
-  <div class="section"><span><i class="fas fa-file-circle-xmark"></i><a href="termoscancelamento.html" style="color: inherit; text-decoration: none;">Termos de Cancelamento</a></span><i class="fas fa-chevron-right"></i></div>
-  <div class="section"><span><i class="fas fa-file-alt"></i><a href="termosdeuso.html" style="color: inherit; text-decoration: none;">Termos de uso</a></span> <i class="fas fa-chevron-right"></i></div>
-  <div class="section"><span><i class="fas fa-shield-alt"></i><a href="privacidade.html" style="color: inherit; text-decoration: none;">Política de privacidade</a></span> <i class="fas fa-chevron-right"></i></div>
-  <div class="section" id="logout-btn"><span><i class="fas fa-sign-out-alt"></i>Sair do aplicativo</span></div>
 
-<button class="btn-emergencia" onclick="enviarEmergencia()">
-  <i class="fas fa-exclamation-triangle"></i> Emergência
-</button>
+  <a class="section" href="meajuda.html">
+    <span><i class="fas fa-headset"></i> Me ajuda</span>
+    <i class="fas fa-chevron-right"></i>
+  </a>
 
-<div class="bottom-nav">
-  <a href="pedidos.html">
-    <i class="fas fa-box"></i>
-    <div>Pedidos</div>
+  <a class="section" href="dv.html">
+    <span><i class="fas fa-check-circle"></i> Validação de documentos</span>
+    <i class="fas fa-chevron-right"></i>
   </a>
-  <a href="aceitos.html">
-    <i class="fas fa-check"></i>
-    <div>Aceitos</div>
-  </a>
-  <a href="realizados.html" class="active">
-    <i class="fas fa-clock"></i>
-    <div>Realizados</div>
-  </a>
-  <a href="minhaconta.html">
-    <i class="fas fa-user"></i>
-    <div>Minha Conta</div>
-  </a>
-</div>
 
+  <a class="section" href="termoscancelamento.html">
+    <span><i class="fas fa-file-circle-xmark"></i> Termos de Cancelamento</span>
+    <i class="fas fa-chevron-right"></i>
+  </a>
 
-  <!-- Modal de confirmação -->
-  <div class="modal-overlay" id="confirm-modal">
-    <div class="modal">
-      <h2>Deseja realmente sair?</h2>
-      <p>Você será desconectado da sua conta.</p>
-      <div class="modal-buttons">
-        <button id="confirm-yes">Sim</button>
-        <button id="confirm-no">Cancelar</button>
-      </div>
-    </div>
+  <a class="section" href="termosdeuso.html">
+    <span><i class="fas fa-file-alt"></i> Termos de uso</span>
+    <i class="fas fa-chevron-right"></i>
+  </a>
+
+  <a class="section" href="privacidade.html">
+    <span><i class="fas fa-shield-alt"></i> Política de privacidade</span>
+    <i class="fas fa-chevron-right"></i>
+  </a>
+
+  <a class="section" id="logout-btn" href="#">
+  <span><i class="fas fa-sign-out-alt"></i> Sair do aplicativo</span>
+  <i class="fas fa-chevron-right"></i>
+</a>
+
+  <!-- Botão de Emergência -->
+  <button class="btn-emergencia" onclick="enviarEmergencia()">
+    <i class="fas fa-exclamation-triangle"></i> Emergência
+  </button>
+
+  <!-- Navegação Inferior -->
+  <div class="nav">
+    <nav>
+      <a href="lojaPedidos.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/></svg>
+        <span>Pedidos</span>
+      </a>
+      <a href="aceitos.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Aceitos</span>
+      </a>
+      <a href="realizados.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <span>Realizados</span>
+      </a>
+      <a href="minhaconta.html" class="active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-3-3.87"/><path d="M4 21v-2a4 4 0 0 1 3-3.87"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>Minha Conta</span>
+      </a>
+    </nav>
   </div>
 
+  <!-- Modal de confirmação -->
+  <!-- Modal -->
+<div class="modal-overlay" id="confirm-modal">
+  <div class="modal">
+    <h2>Deseja realmente sair?</h2>
+    <p>Você será desconectado da sua conta.</p>
+
+    <div class="modal-buttons">
+      <button onclick="confirmarSaida()">Sim</button>
+      <button onclick="fecharModal()">Cancelar</button>
+
+    </div>
+  </div>
+</div>
+
   <script src="JS/minhaconta.js"></script>
+  <script src="JS/dark.js"></script>
+
 </body>
 </html>

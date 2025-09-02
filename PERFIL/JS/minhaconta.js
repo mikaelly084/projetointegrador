@@ -1,68 +1,126 @@
-window.addEventListener('load', () => {
-  const loadingScreen = document.getElementById('loading-screen')
-  if (loadingScreen) {
-    
-    setTimeout(() => {
-      loadingScreen.style.display = 'none'
-    }, 1000)
+
+// ELEMENTOS DOM
+const el = (id) => document.getElementById(id); // atalho para pegar elementos
+
+const uploadInput   = el("upload-photo");
+const profileImage  = el("profile-image");
+const defaultIcon   = el("default-icon");
+const removeBtn     = el("remove-photo");
+const profileCont   = el("profile-container");
+
+const logoutBtn     = el("logout-btn");
+const modal         = el("confirm-modal");
+
+const perfilForm    = el("perfilForm");
+
+
+// FUNÇÕES AUXILIARES
+function salvarLocal(chave, valor) {
+  localStorage.setItem(chave, valor);
+}
+
+function carregarLocal(chave) {
+  return localStorage.getItem(chave);
+}
+
+function removerLocal(chave) {
+  localStorage.removeItem(chave);
+}
+
+// FOTO DE PERFIL
+function atualizarFotoPerfil(foto) {
+  if (foto) {
+    profileImage.src = foto;
+    profileImage.style.display = "block";
+    defaultIcon.style.display = "none";
+    removeBtn.s
+  } else {
+    profileImage.src = "";
+    profileImage.style.display = "none";
+    defaultIcon.style.display = "block";
+    removeBtn.style.display = "none";
   }
-})
+}
 
-const input = document.getElementById('upload-photo')
-const image = document.getElementById('profile-image')
+function carregarFotoSalva() {
+  const fotoSalva = carregarLocal("fotoPerfil");
+  if (fotoSalva) atualizarFotoPerfil(fotoSalva);
+}
 
-input.addEventListener('change', function () {
-  const file = this.files[0]
-  if (file) {
-    const reader = new FileReader()
-    reader.onload = function (e) {
-      image.src = e.target.result
+uploadInput?.addEventListener("change", function () {
+  const file = this.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    atualizarFotoPerfil(e.target.result);
+    salvarLocal("fotoPerfil", e.target.result);
+  };
+  reader.readAsDataURL(file);
+});
+
+removeBtn?.addEventListener("click", () => {
+  removerLocal("fotoPerfil");
+  atualizarFotoPerfil(null);
+});
+
+
+// BOTÃO DE EMERGÊNCIA
+function enviarEmergencia() {
+  window.location.href = "tel:190";
+}
+
+
+
+// PERFIL - FORMULÁRIO
+
+const camposPerfil = ["nomeUsuario", "emailUsuario", "telefoneUsuario", "cepUsuario", "enderecoUsuario", "cpfUsuario"];
+
+perfilForm?.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  camposPerfil.forEach(campo => {
+    if (perfilForm[campo.replace("Usuario", "")]) {
+      salvarLocal(campo, perfilForm[campo.replace("Usuario", "")].value);
     }
-    reader.readAsDataURL(file)
-  }
-})
+  });
 
-const logoutBtn = document.getElementById('logout-btn')
-const modal = document.getElementById('confirm-modal')
-const confirmYes = document.getElementById('confirm-yes')
-const confirmNo = document.getElementById('confirm-no')
+  alert("Dados salvos com sucesso!");
+  window.location.href = "perfiluser.html";
+});
 
-logoutBtn.addEventListener('click', function () {
-  modal.style.display = 'flex'
-})
+function carregarDadosSalvos() {
+  camposPerfil.forEach(campo => {
+    const valor = carregarLocal(campo);
+    if (valor && perfilForm[campo.replace("Usuario", "")]) {
+      perfilForm[campo.replace("Usuario", "")].value = valor;
+    }
+  });
+}
 
-confirmYes.addEventListener('click', function () {
-  sessionStorage.clear()
-  localStorage.clear()
-  window.location.href = "login.html"
-})
 
-confirmNo.addEventListener('click', function () {
-  modal.style.display = 'none'
-})
+// modal
+function abrirModal() {
+  modal.style.display = "flex";
+}
 
-  function enviarEmergencia() {
-    // Faz ligação para a polícia (190 no Brasil)
-    window.location.href = 'tel:190';
-  }
+function fecharModal() {
+  modal.style.display = "none";
+}
 
-  // function enviarEmergencia() {
-  //   if (navigator.geolocation) {
-  //     navigator.geolocation.getCurrentPosition(function(position) {
-  //       const latitude = position.coords.latitude;
-  //       const longitude = position.coords.longitude;
-  //       const linkLocalizacao = `https://www.google.com/maps?q=${latitude},${longitude}`;
+function confirmarSaida() {
+  fecharModal();
+  window.location.href = "login.html"; // Redireciona de verdade
+}
 
-  //       // Número de WhatsApp do suporte de emergência (formato internacional sem + e sem espaços)
-  //       const numeroWhatsApp = "5511999999999"; // Altere para o número real
+// Ativando o modal ao clicar em "Sair"
+logoutBtn?.addEventListener("click", function (e) {
+  e.preventDefault(); // Impede redirecionamento imediato
+  abrirModal();
+});
 
-  //       const mensagem = `🚨 EMERGÊNCIA! Preciso de ajuda imediata.\n📍 Minha localização: ${linkLocalizacao}`;
-
-  //       window.open(`https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`, '_blank');
-  //     }, function() {
-  //       alert("Não foi possível obter sua localização. Por favor, ative o GPS.");
-  //     });
-  //   } else {
-  //     alert("Geolocalização não é suportada pelo seu navegador.");
-  //   }
-  // }
+//inicializacao
+window.addEventListener("load", () => {
+  carregarFotoSalva();
+  carregarDadosSalvos();
+});

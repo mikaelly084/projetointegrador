@@ -1,24 +1,45 @@
+/* VARIÁVEIS DE TEMA */
 :root {
   --rosa-principal: #EF2F7E;
   --rosa-claro: #F279A1;
   --rosa-hover: #F9A4B4;
-  --texto-principal: #333;
+  --azul-detalhe: #58ccf8;
+
+  --texto-principal: #000000;
   --texto-secundario: #666;
   --estrela: gold;
   --sombra: rgba(0, 0, 0, 0.08);
+
+  --bg-principal: #fff;
+  --bg-secundario: #f8f8f8;
+  --comentario-bg: #f8f8f8;
+  --borda-clara: #ddd;
+  --cinza-placeholder: #888;
+
   --radius: 10px;
 }
 
-/* ===== Layout Geral ===== */
+/* DARK MODE */
+body.dark-mode {
+  --texto-principal: #f1f1f1;
+  --texto-secundario: #ccc;
+
+  --bg-principal: #121212;
+  --bg-secundario: #1E1E1E;
+  --comentario-bg: #2a2a2a;
+  --borda-clara: #444;
+  --cinza-placeholder: #888;
+}
+
 body {
-  background-color: #fff;
+  background: var(--bg-principal);
   font-family: 'Inter', sans-serif;
   color: var(--texto-principal);
-  line-height: 1.6;
   margin: 0;
   padding: 20px;
   display: flex;
   justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 main {
@@ -27,20 +48,19 @@ main {
   animation: fadeIn 0.4s ease-in-out;
 }
 
-/* ===== Botão Voltar ===== */
+/* BOTÃO VOLTAR */
 .btn-voltar {
   margin-bottom: 16px;
 }
 
 .btn-voltar a {
-  background-color: var(--rosa-principal);
+  background: var(--rosa-principal);
   color: #fff;
   padding: 10px 16px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
   transition: background 0.3s ease, transform 0.2s ease;
-  display: inline-block;
 }
 
 .btn-voltar a:hover {
@@ -48,64 +68,118 @@ main {
   transform: translateY(-2px);
 }
 
-/* ===== Perfil ===== */
+/*CABEÇALHO */
+.header {
+  background: var(--bg-secundario);
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--texto-principal);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/*PERFIL*/
 .profile {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   flex-wrap: wrap;
+  border-radius: var(--radius);
+  height: 150px;
+  padding: 10px;
+  background: var(--bg-secundario);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
 .profile-pic-container {
   position: relative;
-  width: 64px;
-  height: 64px;
+  width: 120px;
+  height: 120px;
 }
 
-.profile-pic-container img {
+.profile-icon {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--texto-principal);
-  cursor: pointer;
-}
-
-.edit-icon {
-  position: absolute;
-  bottom: -2px;
-  right: -2px;
-  background-color: var(--rosa-principal);
-  border-radius: 50%;
-  padding: 6px;
-  font-size: 12px;
-  color: white;
-  border: 2px solid white;
+  background: #f0f0f0;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 60px;
+  color: #888;
+  overflow: hidden;
 }
 
-/* ===== Botões de Ação ===== */
+.profile-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Botão de ação (foto do perfil) */
+.profile-btn {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  border-radius: 50%;
+  padding: 7px;
+  font-size: 16px;
+  color: #fff;
+  border: 2px solid #fff;
+  cursor: pointer;
+  background-color: var(--azul-detalhe);
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.profile-btn:hover {
+  transform: scale(1.1);
+}
+
+.profile h2 {
+  margin-top: 10px;
+  font-size: 18px;
+  color: var(--texto-principal);
+}
+
+.profile p {
+  font-size: 14px;
+  color: var(--texto-secundario);
+}
+
+/* ==================================================
+   BOTÕES DO PERFIL
+================================================== */
 .botoes {
   display: flex;
   gap: 12px;
+  margin-top: 15px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn-editar,
 .btn-compartilhar {
-  background-color: var(--rosa-principal);
-  padding: 10px 18px;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 14px;
-  color: white;
+  background: var(--rosa-principal);
+  color: #fff;
   text-decoration: none;
-  transition: background 0.3s ease, transform 0.2s ease;
-  border: none;
+  padding: 10px 16px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 8px;
   cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .btn-editar:hover,
@@ -114,19 +188,28 @@ main {
   transform: translateY(-2px);
 }
 
-/* ===== Seções ===== */
+.botoes i {
+  font-size: 16px;
+}
+
+/* ==================================================
+   SEÇÕES GERAIS
+================================================== */
 section {
-  background: white;
+  background: var(--bg-secundario);
   margin: 15px 0 20px;
   padding: 20px;
   border-radius: var(--radius);
   box-shadow: 0 4px 10px var(--sombra);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.4s ease, background-color 0.3s ease;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeSlideIn 0.6s ease forwards;
 }
 
 section:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
 section h3 {
@@ -135,12 +218,27 @@ section h3 {
   color: var(--rosa-principal);
 }
 
-.conquistas h3 span {
-  font-size: 14px;
-  color: var(--rosa-principal);
+/* ==================================================
+   CONQUISTAS
+================================================== */
+.lista-conquistas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-/* ===== Itens ===== */
+
+.conquista {
+  background: var(--rosa-principal);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  display: block;
+  margin-bottom: 10px; /* espaço entre eles */
+}
+
+
 .item {
   display: flex;
   align-items: center;
@@ -152,14 +250,39 @@ section h3 {
   margin-right: 10px;
 }
 
-/* ===== Estatísticas ===== */
 .stats {
   font-size: 14px;
   color: var(--texto-secundario);
-  margin-top: 10px;
 }
 
-/* ===== Estrelas ===== */
+/* ==================================================
+   AVALIAÇÕES
+================================================== */
+.avaliacoes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.comentario {
+  background: var(--comentario-bg);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  border-left: 4px solid var(--azul-detalhe);
+  transition: background-color 0.3s ease;
+}
+
+.comentario p {
+  font-size: 14px;
+  color: var(--texto-secundario);
+}
+
+.stars {
+  color: var(--estrela);
+  margin-bottom: 5px;
+}
+
 .estrelas span {
   font-size: 30px;
   cursor: pointer;
@@ -171,17 +294,36 @@ section h3 {
   color: var(--estrela);
 }
 
-/* ===== Comentários ===== */
-.comentario {
-  background-color: #f8f8f8;
-  border-left: 4px solid var(--rosa-principal);
-  padding: 10px;
-  border-radius: 8px;
-  margin-bottom: 10px;
+/* ==================================================
+   TEXTAREA / COMENTÁRIOS
+================================================== */
+textarea {
+  width: 660px;
+  margin-top: 10px;
+  padding: 8px;
+  border: 1px solid var(--borda-clara);
+  outline: none;
+  resize: none;
+  border-radius: 10px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  font-size: 14px;
+  color: var(--texto-principal);
+  background: var(--bg-secundario);
+}
+
+textarea:hover,
+textarea:focus {
+  border: solid 1px var(--azul-detalhe);
+  outline: none;
+}
+
+textarea::placeholder {
+  color: var(--cinza-placeholder);
 }
 
 #enviarComentario {
   margin-top: 10px;
+  margin-bottom: 16px;
   background: var(--rosa-principal);
   color: #fff;
   border: none;
@@ -197,7 +339,48 @@ section h3 {
   background: var(--rosa-hover);
 }
 
-/* ===== Mensagem Copiado ===== */
+/* ==================================================
+   MENU DE COMPARTILHAMENTO
+================================================== */
+.menu-compartilhar {
+  display: none;
+  position: absolute;
+  margin-top: 10px;
+  background: var(--bg-principal);
+  padding: 10px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  gap: 8px;
+  min-width: 160px;
+  z-index: 999;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-compartilhar.show {
+  display: flex;
+}
+
+.menu-compartilhar button,
+.menu-compartilhar a {
+  background: transparent;
+  color: inherit;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.menu-compartilhar button:hover,
+.menu-compartilhar a:hover {
+  background: var(--rosa-principal);
+  color: white;
+}
+
+/* ==================================================
+   MENSAGEM: LINK COPIADO
+================================================== */
 #copiado-msg {
   display: none;
   position: fixed;
@@ -219,70 +402,58 @@ section h3 {
   opacity: 1;
 }
 
-/* ===== Menu Compartilhar ===== */
-.menu-compartilhar {
-  display: none;
-  position: absolute;
-  margin-top: 10px;
-  background-color: white;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  z-index: 999;
-  flex-direction: column;
-  gap: 8px;
-  min-width: 160px;
-}
-
-.menu-compartilhar.show {
+/* ==================================================
+   BARRA INFERIOR (NAV)
+================================================== */
+nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-secundario);
   display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-top: 1px solid var(--borda-clara);
 }
 
-.menu-compartilhar button,
-.menu-compartilhar a {
-  background-color: white;
-  color: black;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 6px;
-  text-align: left;
+nav a {
   text-decoration: none;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+  color: var(--texto-secundario);
+  font-size: 20px;
 }
 
-.menu-compartilhar button:hover,
-.menu-compartilhar a:hover {
-  background: var(--rosa-principal);
-  color: white;
-}
-
-/* ===== Responsividade ===== */
+/* ==================================================
+   RESPONSIVO
+================================================== */
 @media (max-width: 600px) {
   .profile {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    height: auto;
   }
 
   .botoes {
     width: 100%;
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .btn-editar,
   .btn-compartilhar {
-    width: 100wh;
-    max-width: 100wh;
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+  }
+
+  textarea {
+    width: 100%;
   }
 }
 
-/* ===== Animação ===== */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
+/* ==================================================
+   ANIMAÇÕES
+================================================== */
+@keyframes fadeSlideIn {
   to {
     opacity: 1;
     transform: translateY(0);

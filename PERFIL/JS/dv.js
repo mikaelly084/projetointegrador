@@ -54,7 +54,7 @@ document.getElementById('formDocumentos').addEventListener('submit', function (e
   }
 
   // Simulação de envio bemsucedido
-  mensagem.innerHTML = `<p class="sucesso">✅ Documentos enviados com sucesso!</p>`
+  mensagem.innerHTML = `<p class="sucesso">✔️Documentos enviados com sucesso!</p>`
   mensagem.classList.add('sucesso')
 })
 
@@ -94,7 +94,7 @@ function enviarDocumentoCertificado() {
   }
 
   // Simulação de envio bemsucedido
-  mensagem.innerHTML = '✅ Certificado enviado com sucesso!'
+  mensagem.innerHTML = '✔️Certificado enviado com sucesso!'
   mensagem.classList.add('sucesso')
 
   status.textContent = 'Status: Documento enviado'

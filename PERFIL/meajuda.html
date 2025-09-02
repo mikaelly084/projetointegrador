@@ -5,77 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Me Ajuda</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      padding: 20px;
-      background-color: #ffffff;
-    }
-
-    .btn-voltar {
-      margin-bottom: 20px;
-    }
-
-    .btn-voltar a {
-      background-color: #EF2F7E;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-
-    .btn-voltar a:hover {
-      background-color: #F9A4B4;
-      
-    }
-
-    h1, h2 {
-      color: #EF2F7E;
-    }
-
-    .ajuda-item:hover {
-      background-color: #EF2F7E;
-      color: #ffffff;
-    }
-    .ajuda-item {
-      background: white;
-      color: black;
-      border-radius: 12px;
-      padding: 15px;
-      margin: 10px 0;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .ajuda-item i {
-      margin-right: 10px;
-    }
-
-    .ajuda-pergunta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .ajuda-resposta {
-      margin-top: 10px;
-      display: none;
-      color: black;
-      background: white;
-      padding: 12px;
-      border-radius: 10px;
-      font-size: 15px;
-      line-height: 1.5;
-    }
-
-    .ajuda-item.ativo .ajuda-resposta {
-      display: block;
-    }
-  </style>
+  <link rel="stylesheet" href="CSS/meajuda.css">
 </head>
 <body>
 
@@ -181,6 +111,8 @@
       Seus dados são protegidos conforme a LGPD. Usamos suas informações apenas para melhorar sua experiência na plataforma.
     </div>
   </div>
+
+<script src="JS/dark.js"></script>
 
   <script>
     const itens = document.querySelectorAll('.ajuda-item');
