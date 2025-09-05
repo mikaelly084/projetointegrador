@@ -19,37 +19,28 @@
 
     <!-- Botão Voltar -->
     <div class="btn-voltar">
-      <a href="minhaconta.html" aria-label="Voltar para minha conta">
-        <span aria-hidden="true">◀</span> Voltar
-      </a>
+      <a href="minhaconta.html" class="voltar">◀ Voltar</a>
     </div>
 
     <!-- Seção de Perfil -->
     <div class="profile">
-
-      <!-- Foto de Perfil -->
-      <div class="profile-pic-container">
-        <label for="upload-photo" class="profile-label">
-          <div class="profile-icon" id="profile-container">
-            <i class="fas fa-user" id="default-icon"></i>
-            <img id="profile-image" style="display:none;" alt="Foto de perfil" />
-          </div>
-        </label>
-
-        <input type="file" id="upload-photo" accept="image/*" style="display:none" />
-
-        <!-- Botão de ação (camera/lixeira) -->
-        <button id="profile-action" class="profile-btn">
-          <i class="fas fa-camera"></i>
-        </button>
-      </div>
-
-      <!-- Informações do Usuário -->
-      <div class="profile-info">
-        <h3 id="nomeUsuario">Usuário</h3>
-        <p id="profissaoUsuario">Profissão</p>
-      </div>
+  <!-- Foto de Perfil -->
+  <div class="profile-pic-container">
+    <div class="profile-icon" id="profile-container">
+      <i class="fas fa-user" id="default-icon"></i>
+      <img id="profile-image" style="display:none;" alt="Foto de perfil" />
     </div>
+  </div>
+
+  <!-- Informações do Usuário -->
+  <div class="profile-info">
+    <h3 id="nomeUsuario">Usuário</h3>
+    <p id="profissaoUsuario">Profissão</p>
+  </div>
+</div>
+
+
+    </div> <!-- Fim de .profile -->
 
     <!-- Ações: Editar / Compartilhar -->
     <div class="botoes">
@@ -59,13 +50,13 @@
       <button type="button" class="btn-compartilhar" id="btnCompartilhar">
         <i class="fas fa-link"></i> Copiar link
       </button>
-    </div>
 
-    <!-- Menu de Compartilhamento -->
-    <div class="menu-compartilhar" id="menuCompartilhar">
-      <button onclick="copiarLink()">📋 Copiar link</button>
-      <a href="#" target="_blank" id="btnWhatsApp">📱 WhatsApp</a>
-      <a href="#" target="_blank" id="btnFacebook">📘 Facebook</a>
+      <!-- Menu de Compartilhamento -->
+      <div class="menu-compartilhar" id="menuCompartilhar">
+        <button onclick="copiarLink()">📋 Copiar link</button>
+        <a href="#" target="_blank" id="btnWhatsApp">📱 WhatsApp</a>
+        <a href="#" target="_blank" id="btnFacebook">📘 Facebook</a>
+      </div>
     </div>
 
     <!-- Conquistas do Usuário -->

@@ -143,14 +143,22 @@ main {
   transform: scale(1.1);
 }
 
-.profile h2 {
-  margin-top: 10px;
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Estilo normal (desktop) */
+.profile-info h3 {
   font-size: 18px;
+  font-weight: 600;
   color: var(--texto-principal);
 }
 
-.profile p {
+.profile-info p {
   font-size: 14px;
+  margin-top: 4px;
   color: var(--texto-secundario);
 }
 
@@ -432,7 +440,22 @@ nav a {
     align-items: center;
     height: auto;
   }
+  .profile-container {
+    flex-direction: column;   /* empilha a foto e os textos */
+    text-align: center;       /* centraliza os textos */
+  }
 
+  .profile-info {
+    margin-top: 8px;
+  }
+
+  .profile-info h3 {
+    font-size: 16px;
+  }
+
+  .profile-info p {
+    font-size: 13px;
+  }
   .botoes {
     width: 100%;
     justify-content: center;

@@ -1,126 +1,138 @@
-
 // ELEMENTOS DOM
-const el = (id) => document.getElementById(id); // atalho para pegar elementos
+// ======================
+const el = (id) => document.getElementById(id);
 
 const uploadInput   = el("upload-photo");
 const profileImage  = el("profile-image");
 const defaultIcon   = el("default-icon");
-const removeBtn     = el("remove-photo");
-const profileCont   = el("profile-container");
-
+const actionBtn     = el("profile-action");
+const actionIcon    = actionBtn ? actionBtn.querySelector("i") : null;
+const perfilForm    = el("perfilForm");
 const logoutBtn     = el("logout-btn");
 const modal         = el("confirm-modal");
 
-const perfilForm    = el("perfilForm");
-
-
+// ======================
 // FUNÇÕES AUXILIARES
+// ======================
 function salvarLocal(chave, valor) {
   localStorage.setItem(chave, valor);
 }
-
-function carregarLocal(chave) {
+function obterLocal(chave) {
   return localStorage.getItem(chave);
 }
-
 function removerLocal(chave) {
   localStorage.removeItem(chave);
 }
 
+// ======================
 // FOTO DE PERFIL
+// ======================
 function atualizarFotoPerfil(foto) {
+  if (!profileImage || !defaultIcon || !actionIcon) return;
+
   if (foto) {
     profileImage.src = foto;
     profileImage.style.display = "block";
     defaultIcon.style.display = "none";
-    removeBtn.s
+    actionIcon.className = "fas fa-trash";
   } else {
     profileImage.src = "";
     profileImage.style.display = "none";
-    defaultIcon.style.display = "block";
-    removeBtn.style.display = "none";
+    defaultIcon.style.display = "flex";
+    actionIcon.className = "fas fa-camera";
   }
 }
 
-function carregarFotoSalva() {
-  const fotoSalva = carregarLocal("fotoPerfil");
-  if (fotoSalva) atualizarFotoPerfil(fotoSalva);
+// Upload
+if (uploadInput) {
+  uploadInput.addEventListener("change", function () {
+    const file = this.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      atualizarFotoPerfil(e.target.result);
+      salvarLocal("fotoPerfil", e.target.result); // 🔹 Salva no localStorage
+    };
+    reader.readAsDataURL(file);
+  });
 }
 
-uploadInput?.addEventListener("change", function () {
-  const file = this.files[0];
-  if (!file) return;
-
-  const reader = new FileReader();
-  reader.onload = (e) => {
-    atualizarFotoPerfil(e.target.result);
-    salvarLocal("fotoPerfil", e.target.result);
-  };
-  reader.readAsDataURL(file);
-});
-
-removeBtn?.addEventListener("click", () => {
-  removerLocal("fotoPerfil");
-  atualizarFotoPerfil(null);
-});
-
-
-// BOTÃO DE EMERGÊNCIA
-function enviarEmergencia() {
-  window.location.href = "tel:190";
+// Botão troca/remove
+if (actionBtn) {
+  actionBtn.addEventListener("click", () => {
+    if (actionIcon.classList.contains("fa-camera")) {
+      uploadInput.click();
+    } else {
+      removerLocal("fotoPerfil");
+      atualizarFotoPerfil(null);
+    }
+  });
 }
 
-
-
+// ======================
 // PERFIL - FORMULÁRIO
+// ======================
+const camposPerfil = [
+  "nomeUsuario",
+  "emailUsuario",
+  "telefoneUsuario",
+  "cepUsuario",
+  "enderecoUsuario",
+  "cpfUsuario"
+];
 
-const camposPerfil = ["nomeUsuario", "emailUsuario", "telefoneUsuario", "cepUsuario", "enderecoUsuario", "cpfUsuario"];
-
+// Salvar dados
 perfilForm?.addEventListener("submit", (e) => {
   e.preventDefault();
 
   camposPerfil.forEach(campo => {
-    if (perfilForm[campo.replace("Usuario", "")]) {
-      salvarLocal(campo, perfilForm[campo.replace("Usuario", "")].value);
-    }
+    const input = perfilForm[campo.replace("Usuario", "")];
+    if (input) salvarLocal(campo, input.value);
   });
 
   alert("Dados salvos com sucesso!");
   window.location.href = "perfiluser.html";
 });
 
+// Carregar dados salvos
 function carregarDadosSalvos() {
   camposPerfil.forEach(campo => {
-    const valor = carregarLocal(campo);
-    if (valor && perfilForm[campo.replace("Usuario", "")]) {
-      perfilForm[campo.replace("Usuario", "")].value = valor;
+    const valor = obterLocal(campo);
+    const input = perfilForm ? perfilForm[campo.replace("Usuario", "")] : null;
+    if (valor && input) {
+      input.value = valor;
     }
   });
 }
 
-
-// modal
+// ======================
+// MODAL DE LOGOUT
+// ======================
 function abrirModal() {
-  modal.style.display = "flex";
+  if (modal) modal.style.display = "flex";
 }
 
 function fecharModal() {
-  modal.style.display = "none";
+  if (modal) modal.style.display = "none";
 }
 
 function confirmarSaida() {
   fecharModal();
-  window.location.href = "login.html"; // Redireciona de verdade
+  window.location.href = "login.html"; // Redireciona para login
 }
 
-// Ativando o modal ao clicar em "Sair"
-logoutBtn?.addEventListener("click", function (e) {
-  e.preventDefault(); // Impede redirecionamento imediato
+logoutBtn?.addEventListener("click", (e) => {
+  e.preventDefault();
   abrirModal();
 });
 
-//inicializacao
+// ======================
+// INICIALIZAÇÃO
+// ======================
 window.addEventListener("load", () => {
-  carregarFotoSalva();
+  const fotoSalva = obterLocal("fotoPerfil");
+  if (fotoSalva) atualizarFotoPerfil(fotoSalva);
+
   carregarDadosSalvos();
 });
