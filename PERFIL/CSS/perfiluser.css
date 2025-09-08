@@ -1,4 +1,4 @@
-/* VARIÁVEIS DE TEMA */
+
 :root {
   --rosa-principal: #EF2F7E;
   --rosa-claro: #F279A1;
@@ -200,9 +200,7 @@ main {
   font-size: 16px;
 }
 
-/* ==================================================
-   SEÇÕES GERAIS
-================================================== */
+
 section {
   background: var(--bg-secundario);
   margin: 15px 0 20px;
@@ -226,9 +224,7 @@ section h3 {
   color: var(--rosa-principal);
 }
 
-/* ==================================================
-   CONQUISTAS
-================================================== */
+
 .lista-conquistas {
   display: flex;
   flex-direction: column;
@@ -263,9 +259,7 @@ section h3 {
   color: var(--texto-secundario);
 }
 
-/* ==================================================
-   AVALIAÇÕES
-================================================== */
+
 .avaliacoes {
   display: flex;
   flex-direction: column;
@@ -302,9 +296,7 @@ section h3 {
   color: var(--estrela);
 }
 
-/* ==================================================
-   TEXTAREA / COMENTÁRIOS
-================================================== */
+
 textarea {
   width: 660px;
   margin-top: 10px;
@@ -347,9 +339,7 @@ textarea::placeholder {
   background: var(--rosa-hover);
 }
 
-/* ==================================================
-   MENU DE COMPARTILHAMENTO
-================================================== */
+
 .menu-compartilhar {
   display: none;
   position: absolute;
@@ -386,9 +376,7 @@ textarea::placeholder {
   color: white;
 }
 
-/* ==================================================
-   MENSAGEM: LINK COPIADO
-================================================== */
+
 #copiado-msg {
   display: none;
   position: fixed;
@@ -410,9 +398,7 @@ textarea::placeholder {
   opacity: 1;
 }
 
-/* ==================================================
-   BARRA INFERIOR (NAV)
-================================================== */
+
 nav {
   position: fixed;
   bottom: 0;
@@ -431,9 +417,7 @@ nav a {
   font-size: 20px;
 }
 
-/* ==================================================
-   RESPONSIVO
-================================================== */
+
 @media (max-width: 600px) {
   .profile {
     flex-direction: column;
@@ -473,9 +457,7 @@ nav a {
   }
 }
 
-/* ==================================================
-   ANIMAÇÕES
-================================================== */
+
 @keyframes fadeSlideIn {
   to {
     opacity: 1;

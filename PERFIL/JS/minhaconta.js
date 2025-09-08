@@ -1,5 +1,4 @@
-// ELEMENTOS DOM
-// ======================
+
 const el = (id) => document.getElementById(id);
 
 const uploadInput   = el("upload-photo");
@@ -11,9 +10,7 @@ const perfilForm    = el("perfilForm");
 const logoutBtn     = el("logout-btn");
 const modal         = el("confirm-modal");
 
-// ======================
 // FUNÇÕES AUXILIARES
-// ======================
 function salvarLocal(chave, valor) {
   localStorage.setItem(chave, valor);
 }
@@ -24,9 +21,8 @@ function removerLocal(chave) {
   localStorage.removeItem(chave);
 }
 
-// ======================
+
 // FOTO DE PERFIL
-// ======================
 function atualizarFotoPerfil(foto) {
   if (!profileImage || !defaultIcon || !actionIcon) return;
 
@@ -70,9 +66,7 @@ if (actionBtn) {
   });
 }
 
-// ======================
 // PERFIL - FORMULÁRIO
-// ======================
 const camposPerfil = [
   "nomeUsuario",
   "emailUsuario",
@@ -106,9 +100,7 @@ function carregarDadosSalvos() {
   });
 }
 
-// ======================
 // MODAL DE LOGOUT
-// ======================
 function abrirModal() {
   if (modal) modal.style.display = "flex";
 }
@@ -127,12 +119,16 @@ logoutBtn?.addEventListener("click", (e) => {
   abrirModal();
 });
 
-// ======================
 // INICIALIZAÇÃO
-// ======================
 window.addEventListener("load", () => {
   const fotoSalva = obterLocal("fotoPerfil");
   if (fotoSalva) atualizarFotoPerfil(fotoSalva);
 
   carregarDadosSalvos();
 });
+
+// BOTÃO DE EMERGÊNCIA
+function enviarEmergencia() {
+  // Faz ligação para a polícia (190 no Brasil)
+  window.location.href = "tel:190";
+}

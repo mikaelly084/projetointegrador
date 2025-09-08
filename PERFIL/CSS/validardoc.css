@@ -1,4 +1,4 @@
-/* VARIÁVEIS DE TEMA */
+
 :root {
   --rosa-principal: #EF2F7E;
   --rosa-claro: #F279A1;
@@ -37,7 +37,7 @@ body.dark-mode {
 
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'inter', sans-serif;
   background-color: var(--bg-principal);
   color: var(--texto-principal);
   padding: 30px;

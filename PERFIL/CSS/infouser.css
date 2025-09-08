@@ -12,18 +12,12 @@
   --max-form-width: 360px;
 }
 
-/* =========================
-   RESET
-========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =========================
-   BODY GERAL
-========================= */
 body {
   font-family: 'Inter', sans-serif;
   background-color: #fff;
@@ -35,9 +29,7 @@ body {
   padding: 20px;
 }
 
-/* =========================
-   BOTÃO VOLTAR
-========================= */
+
 .btn-voltar {
   width: 100px;
   display: flex;
@@ -65,9 +57,6 @@ h2{
 }
 
 
-/* =========================
-   CONTAINER DO FORMULÁRIO
-========================= */
 .form-container {
   width: 100%;
   max-width: var(--max-form-width);
@@ -84,9 +73,6 @@ h2{
   box-shadow: 0 6px 16px var(--sombra-suave);
 }
 
-/* =========================
-   TÍTULO DO FORMULÁRIO
-========================= */
 .form-box h2 {
   text-align: center;
   font-size: 20px;
@@ -94,9 +80,7 @@ h2{
   color: var(--rosa-principal);
 }
 
-/* =========================
-   INFORMAÇÕES
-========================= */
+
 .info {
   margin-bottom: 30px;
   font-size: 14px;
@@ -107,9 +91,6 @@ h2{
   margin-bottom: 10px;
 }
 
-/* =========================
-   CAMPOS DE INPUT
-========================= */
 input {
   width: 100%;
   padding: 12px;
@@ -131,9 +112,6 @@ input:focus {
   color: var(--cinza-placeholder);
 }
 
-/* =========================
-   BOTÕES
-========================= */
 .btn {
   width: 100%;
   padding: 12px;
@@ -152,9 +130,7 @@ input:focus {
   background-color: var(--rosa-claro);
 }
 
-/* =========================
-   TEMA PADRÃO (claro)
-========================= */
+
 :root {
   --rosa-principal: #EF2F7E;
   --rosa-claro: #F279A1;
@@ -171,9 +147,7 @@ input:focus {
   --max-form-width: 360px;
 }
 
-/* =========================
-   TEMA DARK
-========================= */
+
 body.dark-mode {
   --bg-principal: #121212;
   --bg-secundario: #1E1E1E;
@@ -185,9 +159,7 @@ body.dark-mode {
   --sombra-forte: rgba(255, 255, 255, 0.2);
 }
 
-/* =========================
-   BODY GERAL
-========================= */
+
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-principal);
@@ -199,9 +171,7 @@ body {
   padding: 20px;
 }
 
-/* =========================
-   CONTAINER DO FORMULÁRIO
-========================= */
+
 .form-container {
   width: 100%;
   max-width: var(--max-form-width);
@@ -213,9 +183,7 @@ body {
   transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
 }
 
-/* =========================
-   MODAIS
-========================= */
+
 .modal {
   display: none;
   position: fixed;
@@ -260,9 +228,6 @@ body {
   gap: 10px;
 }
 
-/* =========================
-   ANIMAÇÕES
-========================= */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -274,9 +239,6 @@ body {
   }
 }
 
-/* =========================
-   RESPONSIVO
-========================= */
 @media (max-width: 480px) {
   body {
     padding: 10px;

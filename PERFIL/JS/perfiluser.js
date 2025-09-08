@@ -1,4 +1,4 @@
-// ==================== FUNÇÕES UTILITÁRIAS ====================
+
 function salvarLocal(chave, valor) {
   try {
     localStorage.setItem(chave, JSON.stringify(valor));
@@ -31,7 +31,7 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
-// ==================== FOTO DE PERFIL (somente exibição) ====================
+// FOTO DE PERFIL 
 const profileImage = document.getElementById("profile-image");
 const defaultIcon = document.getElementById("default-icon");
 
@@ -51,7 +51,7 @@ function atualizarFotoPerfil(foto) {
 const fotoSalva = localStorage.getItem("fotoPerfil");
 if (fotoSalva) atualizarFotoPerfil(fotoSalva);
 
-// ==================== MODO ESCURO ====================
+//MODO ESCURO 
 const btnDark = document.getElementById("toggle-darkmode");
 btnDark?.addEventListener("click", () => {
   document.body.classList.toggle("dark");
@@ -60,7 +60,7 @@ btnDark?.addEventListener("click", () => {
   btnDark.textContent = isDark ? "☀️" : "🌙";
 });
 
-// ==================== COMPARTILHAMENTO ====================
+//  COMPARTILHAMENTO
 const btnCompartilhar = document.getElementById("btnCompartilhar");
 const menuCompartilhar = document.getElementById("menuCompartilhar");
 const msgCopiado = document.getElementById("copiado-msg");
@@ -96,7 +96,7 @@ function atualizarLinksCompartilhamento() {
   if (face) face.href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
 }
 
-// ==================== AVALIAÇÕES E COMENTÁRIOS ====================
+//AVALIAÇÕES E COMENTÁRIO
 let avaliacoes = obterLocal("avaliacoes", []);
 let notaSelecionada = 0;
 

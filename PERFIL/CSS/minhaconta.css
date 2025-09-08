@@ -1,4 +1,4 @@
-/* ===================== VARIÁVEIS ===================== */
+
 :root {
   --rosa-principal: #EF2F7E;
   --rosa-claro: #F279A1;
@@ -23,7 +23,7 @@
   --raio-borda: 12px;
 }
 
-/* ===================== RESET ===================== */
+
 * {
   margin: 0;
   padding: 0;
@@ -38,7 +38,6 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-/* ===================== DARK MODE ===================== */
 body.dark-mode {
   --bg-principal: #121212;
   --bg-secundario: #1E1E1E;
@@ -50,7 +49,7 @@ body.dark-mode {
   --sombra-forte: rgba(255,255,255,0.2);
 }
 
-/* ===================== CABEÇALHO ===================== */
+
 .header {
   background: var(--bg-secundario);
   padding: 15px 20px;
@@ -94,7 +93,7 @@ body.dark-mode {
   
 }
 
-/* ===================== PERFIL ===================== */
+/* perfil */
 .profile {
   display: flex;
   align-items: center;
@@ -279,7 +278,7 @@ nav svg { width: 22px; height: 22px; }
 }
 .modal-buttons button:hover { background: var(--rosa-hover); }
 
-/* ===================== BOTÃO EMERGÊNCIA ===================== */
+/* emergencia */
 .btn-emergencia {
   position: fixed;
   bottom: 80px;
@@ -303,7 +302,7 @@ nav svg { width: 22px; height: 22px; }
 }
 .btn-emergencia:hover { background: rgb(180,10,10); }
 
-/* ===================== RESPONSIVO ===================== */
+
 @media (max-width: 600px) {
   .profile {
     flex-direction: column;

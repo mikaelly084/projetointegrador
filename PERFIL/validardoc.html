@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Envio de Documentos</title>
-  <link rel="stylesheet" href="CSS/dv.css">
+  <link rel="stylesheet" href="CSS/validardoc.css">
  
 </head>
 <body>
@@ -21,12 +21,15 @@
     <form id="formDocumentos">
       <label for="cpfArquivo">CPF (PDF ou JPG até 500KB):</label>
       <input type="file" id="cpfArquivo" accept=".pdf,.jpg,.jpeg">
+      <p id="statusCertificado" class="status aguardando"><strong>Status:</strong> Obrigatório</p>
 
       <label for="rgArquivo">RG (PDF ou JPG até 500KB):</label>
       <input type="file" id="rgArquivo" accept=".pdf,.jpg,.jpeg">
+      <p id="statusCertificado" class="status aguardando"><strong>Status:</strong> Obrigatório</p>
 
       <label for="comprovanteArquivo">Comprovante de Endereço (PDF até 500KB):</label>
       <input type="file" id="comprovanteArquivo" accept=".pdf">
+      <p id="statusCertificado" class="status aguardando"><strong>Status:</strong> Obrigatório</p>
 
       <button type="submit">Enviar Documentos</button>
     </form>
@@ -41,14 +44,14 @@
     <label for="docCertificado">Envie o certificado (PDF ou imagem até 500KB):</label>
     <input type="file" id="docCertificado" accept="image/*,application/pdf">
 
-    <p id="statusCertificado" class="status aguardando">Status: Opcional</p>
+    <p id="statusCertificado" class="status aguardando"><strong>Status:</strong> Obrigatório</p>
 
     <button onclick="enviarDocumentoCertificado()">Enviar Documento</button>
 
     <div id="mensagemCertificado" class="mensagem"></div>
   </div>
 
-  <script src="JS/dv.js"></script>
+  <script src="JS/validardoc.js"></script>
   <script src="JS/dark.js"></script>
 
 </body>

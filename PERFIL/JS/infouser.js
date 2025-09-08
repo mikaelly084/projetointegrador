@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 })
 
-// ===== Selecionar o formulário =====
+//Selecionar o formulário
 const perfilForm = document.getElementById("perfilForm")
 
 // Carregar dados salvos no localStorage ao abrir a página
@@ -96,7 +96,7 @@ perfilForm.addEventListener("submit", (e) => {
   window.location.href = "perfiluser.html" // volta para a página do perfil
 })
 
-// ===== Excluir conta =====
+// Excluir conta
 const btnExcluir = document.getElementById("btnExcluir")
 const modalExcluir = document.getElementById("modalExcluir")
 const confirmarExcluir = document.getElementById("confirmarExcluir")
