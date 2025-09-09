@@ -19,14 +19,12 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #fff;
-  color: var(--texto-secundario);
+  margin: 0;
+  height: 100vh; /* ocupa a tela toda */
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px;
+  justify-content: center; /* centraliza na horizontal */
+  align-items: center;     /* centraliza na vertical */
+  background: var(--bg-principal, #f8f8f8); /* cor de fundo opcional */
 }
 
 
