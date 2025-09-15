@@ -24,7 +24,7 @@ body {
   display: flex;
   justify-content: center; /* centraliza na horizontal */
   align-items: center;     /* centraliza na vertical */
-  background: var(--bg-principal, #f8f8f8); /* cor de fundo opcional */
+  background: var(--bg-principal); /* cor de fundo opcional */
 }
 
 
@@ -58,7 +58,7 @@ h2{
 .form-container {
   width: 100%;
   max-width: var(--max-form-width);
-  background-color: #fff;
+  background-color: var(--bg-secundario);
   border-radius: var(--raio-borda);
   box-shadow: 0 2px 8px var(--sombra-suave);
   padding: 30px 20px;

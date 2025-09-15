@@ -194,40 +194,6 @@ body.dark-mode {
 }
 .section i { font-size: 18px; }
 
-/*navegador*/
-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-
-  background: var(--bg-secundario);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  padding: 10px 0;
-  box-shadow: 0 -2px 6px var(--sombra-suave);
-}
-nav a {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-
-  font-size: 0.8rem;
-  text-decoration: none;
-  color: var(--texto-principal);
-
-  transition: color 0.3s ease;
-}
-nav a.active,
-nav a:hover {
-  color: var(--rosa-principal);
-  font-weight: bold;
-}
-nav svg { width: 22px; height: 22px; }
 
 /*modal*/
 .modal-overlay {
@@ -278,7 +244,7 @@ nav svg { width: 22px; height: 22px; }
 /* emergencia */
 .btn-emergencia {
   position: fixed;
-  bottom: 80px;
+  bottom: 20px;
   right: 20px;
 
   display: flex;

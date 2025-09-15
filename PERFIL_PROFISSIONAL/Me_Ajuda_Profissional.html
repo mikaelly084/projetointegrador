@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Me Ajuda</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="CSS/meajuda.css">
+  <link rel="stylesheet" href="CSS/Me_Ajuda_Profissional.css">
 </head>
 <body>
 
-  <div class="btn-voltar">
-    <a href="minha_conta_cliente.html" aria-label="Voltar para minha conta"><span aria-hidden="true">◀</span> Voltar</a>
-  </div>
+  <main>
+    <div class="btn-voltar">
+      <a href="Minha_Conta_Profissional.html" aria-label="Voltar para minha conta"><span aria-hidden="true">◀</span> Voltar</a>
+    </div>
 
-  <h1>Me Ajuda</h1>
+   <h1>Me Ajuda</h1>
 
   <h2><i class="fas fa-question-circle"></i> Dúvidas Frequentes</h2>
 
@@ -112,9 +113,25 @@
     </div>
   </div>
 
-<script src="JS/dark.js"></script>
+  <!-- PROFISSIONAIS -->
+   <div class="ajuda-item">
+    <div class="ajuda-pergunta">
+      <span><i class="fas fa-id-card"></i> Como validar meus documentos</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="ajuda-resposta">
+      <p>Para garantir a segurança dos clientes e a credibilidade da plataforma, todos os profissionais precisam validar seus documentos.</p>
+      <p>Acesse <strong>Meu Perfil &gt; Validação de Documentos</strong>, envie fotos legíveis de um documento oficial com foto (RG ou CNH) e, se solicitado, comprovante de residência.</p>
+      <p>Nossa equipe analisará as informações em até <strong>48h úteis</strong>. Você será notificado por e-mail assim que a validação for concluída.</p>
+    </div>
+  </div>
 
-  <script>
+ 
+
+  <!-- Script do modo escuro (se aplicável) -->
+  <script src="JS/dark.js"></script>
+
+   <script>
     const itens = document.querySelectorAll('.ajuda-item');
     itens.forEach(item => {
       item.addEventListener('click', () => {
@@ -122,6 +139,7 @@
       });
     });
   </script>
+  
 
 </body>
 </html>

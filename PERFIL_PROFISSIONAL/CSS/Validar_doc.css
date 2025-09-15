@@ -50,7 +50,7 @@ body {
   margin: auto;
   padding: 20px;
   font-size: 16px;
-  background-color: var(--bg-principal);
+  background-color: var(--bg-secundario);
   border-radius: 10px;
   transition: background-color 0.3s ease;
 }
@@ -73,14 +73,18 @@ body {
 }
 
 /* TÍTULOS */
-h2, h3 {
+h2{
   color: var(--rosa-principal);
+}
+
+h3 {
+  color: #58ccf8;
   margin-bottom: 10px;
 }
 
 /* ETAPAS */
 .etapa {
-  background: var(--bg-principal);
+  background: var(--bg-secundario);
   padding: 20px;
   border-radius: 10px;
   margin-top: 20px;
@@ -105,7 +109,7 @@ input[type="file"] {
   margin-top: 8px;
   width: 100%;
   border-radius: 3px;
-  height: 26px;
+  height: 50px;
   font-size: 16px;
   color: var(--texto-principal);
   border: 1px solid var(--borda-clara);

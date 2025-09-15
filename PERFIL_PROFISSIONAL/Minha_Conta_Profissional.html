@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Conta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="CSS/Minha_Conta_Profissional.css">
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header class="header">
+    <h1 class="titulo">Minha Conta</h1>
+    <button class="btn-dark" id="toggleDark">🌙Modo Escuro</button>
+  </header>
+
+  <!-- Perfil -->
+  <section class="profile">
+    <!-- Foto de Perfil -->
+    <div class="profile-pic-container">
+      <label for="upload-photo" class="profile-label" aria-label="Alterar foto de perfil">
+        <div class="profile-icon" id="profile-container">
+          <i class="fas fa-user" id="default-icon"></i>
+          <img id="profile-image" style="display:none;" alt="Foto de perfil do usuário" />
+        </div>
+      </label>
+      <input type="file" id="upload-photo" accept="image/*" hidden />
+
+      <!-- Botão de ação (camera/lixeira) -->
+      <button id="profile-action" class="profile-btn" aria-label="Alterar foto de perfil">
+        <i class="fas fa-camera"></i>
+      </button>
+    </div>
+
+    <!-- Informações do Usuário -->
+    <div class="profile-info">
+      <h3 id="nomeUsuario">Usuário</h3>
+      <p id="profissaoUsuario">Profissão</p>
+    </div>
+  </section>
+
+  <!-- Seções -->
+  <a class="section" href="Perfil_Profissinal.html"><span><i class="fas fa-user"></i> Meu Perfil</span><i class="fas fa-chevron-right"></i></a>
+  <a class="section" href="Me_Ajuda_Profissional.html"><span><i class="fas fa-headset"></i> Me ajuda</span><i class="fas fa-chevron-right"></i></a>
+  <a class="section" href="Validar_doc_Profissional.html"><span><i class="fas fa-check-circle"></i> Validação de documentos</span><i class="fas fa-chevron-right"></i></a>
+  <a class="section" href="Historico_de_Atendimento.html"><span><i class="fas fa-history"></i> Histórico de Atendimento</span><i class="fas fa-chevron-right"></i></a>
+ 
+  <a class="section" href="Termos_de_Uso.html"><span><i class="fas fa-file-alt"></i> Termos de uso</span><i class="fas fa-chevron-right"></i></a>
+ 
+  <a class="section" id="logout-btn" href="#"><span><i class="fas fa-sign-out-alt"></i> Sair do aplicativo</span><i class="fas fa-chevron-right"></i></a>
+
+  <!-- Botão de Emergência -->
+  <button class="btn-emergencia" onclick="enviarEmergencia()">
+    <i class="fas fa-exclamation-triangle"></i> Emergência
+  </button>
+
+  <!-- Modal de confirmação -->
+  <div class="modal-overlay" id="confirm-modal">
+    <div class="modal">
+      <h2>Deseja realmente sair?</h2>
+      <p>Você será desconectado da sua conta.</p>
+      <div class="modal-buttons">
+        <button onclick="confirmarSaida()">Sim</button>
+        <button onclick="fecharModal()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="JS/minhaconta.js"></script>
+  <script src="JS/dark.js"></script>
+  <script src="JS/minhaconta.js"></script>
+</body>
+</html>

@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
   <!-- Estilos -->
   <link rel="stylesheet" href="CSS/perfiluser.css" />
@@ -15,10 +16,7 @@
 <body>
   <main>
 
-    <!-- Botão Voltar -->
-    <div class="btn-voltar">
-      <a href="minhaconta.html" class="voltar">◀ Voltar</a>
-    </div>
+
 
     <!-- Seção de Perfil -->
     <div class="profile">
@@ -30,24 +28,23 @@
     </div>
   </div>
 
-  <!-- Informações do Usuário -->
+  <!-- Informações do Usuário Profissão-->
   <div class="profile-info">
     <h3 id="nomeUsuario">Usuário</h3>
-    <p id="profissaoUsuario">Profissão</p>
   </div>
 </div>
+ </div> <!-- Fim de .profile -->
 
+   <!-- Ações: Editar / Compartilhar -->
+<div class="botoes">
+  <a href="informacao_user.html" class="btn-editar" role="button">
+    <i class="fas fa-user-pen"></i> Editar perfil
+  </a>
+  <button type="button" class="btn-compartilhar" id="btnCompartilhar">
+    <i class="fas fa-link"></i> Copiar link
+  </button>
+</div>
 
-    </div> <!-- Fim de .profile -->
-
-    <!-- Ações: Editar / Compartilhar -->
-    <div class="botoes">
-      <a href="infouser.html" class="btn-editar" role="button">
-        <i class="fas fa-user-pen"></i> Editar perfil
-      </a>
-      <button type="button" class="btn-compartilhar" id="btnCompartilhar">
-        <i class="fas fa-link"></i> Copiar link
-      </button>
 
       <!-- Menu de Compartilhamento -->
       <div class="menu-compartilhar" id="menuCompartilhar">
@@ -57,23 +54,29 @@
       </div>
     </div>
 
-    <!-- Conquistas do Usuário -->
+    
     <section class="conquistas">
-      <h3>Minhas conquistas <span>(1/3)</span></h3>
-      <div class="item">
-        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Ícone da conquista Ninja verificado" />
-        <span>Verificado</span>
-      </div>
-      <div class="stats">
-        <p>📌 9 serviços negociados</p>
-        <p>📅 Cadastrado desde agosto de 2021</p>
+      <div class="card">
+        <div class="section">
+          <h3>Meus Pedidos</h3>
+          <div class="order">
+            <strong>Serviço de Pintura</strong>
+            Status: Concluído · R$ 450,00 · 12/08/2025
+          </div>
+          <div class="order">
+            <strong> Eletricista</strong>
+            Status: Em andamento · Orçamento solicitado · 09/09/2025
+          </div>
+        </div>
       </div>
     </section>
 
+
     <!-- Avaliações -->
     <section id="avaliacoes">
-      <h3 style="color: #EF2F7E;">Nota Média: <span id="nota-media">0.0</span> ⭐</h3>
-
+      <h3>Avaliações dos Profissionais</h3>
+      <h3 style="color: #EF2F7E;">Nota Média: <span id="nota-media">0.0</span></h3>
+    
       <div class="estrelas" id="selecao-estrelas">
         <span data-value="1">★</span>
         <span data-value="2">★</span>
@@ -83,10 +86,18 @@
       </div>
 
       <textarea id="comentario" placeholder="Escreva seu comentário..." rows="4"></textarea>
+     
       <button id="enviarComentario">Enviar Avaliação</button>
 
       <div id="lista-comentarios"></div>
     </section>
+   <!-- Navegação Inferior -->
+  <nav class="nav2">
+    <a href="lojaPedidos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/></svg><span>Pedidos</span></a>
+    <a href="aceitos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Aceitos</span></a>
+    <a href="realizados.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>Realizados</span></a>
+    <a href="minha_conta_cliente.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-3-3.87"/><path d="M4 21v-2a4 4 0 0 1 3-3.87"/><circle cx="12" cy="7" r="4"/></svg><span>Minha Conta</span></a>
+  </nav>
 
     <!-- Mensagem de Confirmação de Link Copiado -->
     <div id="copiado-msg">🔗 Link copiado!</div>

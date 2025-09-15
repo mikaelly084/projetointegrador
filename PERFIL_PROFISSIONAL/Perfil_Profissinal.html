@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Perfil do usuário com conquistas, avaliações e opções de compartilhamento." />
+  <title>Perfil do Profissional</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="CSS/Perfil_Profissional.css">
+ 
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="CSS/perfilProfissional.css" />
+</head>
+<body>
+  <main>
+
+   <!-- Botão configuração -->
+<div class="confi">
+  <a href="Minha_Conta_Profissional.html" class="voltar">
+    <i class="fa-solid fa-gear"></i>
+  </a>
+</div>
+     
+    <!-- Seção de Perfil -->
+    <div class="profile">
+  <!-- Foto de Perfil -->
+  <div class="profile-pic-container">
+    <div class="profile-icon" id="profile-container">
+      <i class="fas fa-user" id="default-icon"></i>
+      <img id="profile-image" style="display:none;" alt="Foto de perfil" />
+    </div>
+  </div>
+
+  <!-- Informações do Usuário Profissão-->
+  <div class="profile-info">
+    <h3 id="nomeUsuario">Usuário</h3>
+    <p id="profissaoUsuario">Profissão</p>
+
+  </div>
+  </div>
+    </div> <!-- Fim de .profile -->
+    <div class="botoes">
+      <a href="Informacao_Profissional.html" class="btn-editar" role="button">
+        <i class="fas fa-user-pen"></i> Editar perfil
+      </a>
+    </div>
+
+    <!-- serviços oferecidos-->
+    <section class="conquistas">
+      <div class="card">
+        <div class="section">
+          <h3>Serviços Oferecidos</h3>
+          <ul>
+            <li>Instalação elétrica residencial</li>
+            <li>Reparos em encanamento</li>
+            <li>Montagem de móveis</li>
+          </ul>
+        </div>
+      </div>
+      </section>
+
+      <!-- sobre-->
+      <section class="conquistas">
+        <div class="card">
+          <div class="section">
+            <h3>Sobre</h3>
+            <p>Profissional com 5 anos de experiência em serviços residenciais. Atendimento rápido e de qualidade.</p>
+          </div>
+          <div class="section">
+            <h3>Documentação</h3>
+            <ul>
+              <li>Identidade verificada ✔</li>
+              <li>Certificação em elétrica ✔</li>
+              <li>Seguro profissional ✔</li>
+            </ul>
+          </div>
+        </div>
+        </section>
+
+
+    <!-- Avaliações -->
+    <section id="avaliacoes">
+      
+      <h3>Avaliações dos Clientes</h3>
+      <div class="rating">⭐⭐⭐⭐⭐ 4.9 (150 avaliações)</div>
+      <h3 style="color: #EF2F7E;">Nota Média: <span id="nota-media">0.0</span></h3>
+      <div class="estrelas" id="selecao-estrelas">
+        <span data-value="1">★</span>
+        <span data-value="2">★</span>
+        <span data-value="3">★</span>
+        <span data-value="4">★</span>
+        <span data-value="5">★</span>
+      </div>
+
+      <textarea id="comentario" placeholder="Escreva seu comentário..." rows="4"></textarea>
+      <button id="enviarComentario">Enviar Avaliação</button>
+
+      <div id="lista-comentarios"></div>
+    </section>
+
+
+  </main>
+
+  <script src="JS/perfiluser.js"></script>
+  <script src="JS/dark.js"></script>
+  
+
+</body>
+</html>

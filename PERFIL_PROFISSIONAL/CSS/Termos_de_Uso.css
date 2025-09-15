@@ -1,0 +1,129 @@
+
+:root {
+  --rosa-principal: #EF2F7E;
+  --rosa-claro: #F279A1;
+  --rosa-hover: #F9A4B4;
+  --azul-detalhe: #58ccf8;
+
+  --texto-principal: #000;
+  --texto-secundario: #666;
+
+  --borda-clara: #ccc;
+  --cinza-placeholder: #999;
+
+  --bg-principal: #fff;
+  --bg-secundario: #fff;
+
+  --sombra-suave: rgba(0, 0, 0, 0.1);
+  --sombra-forte: rgba(0, 0, 0, 0.2);
+
+  --profile-bubble: #f0f0f0;
+  --divider-color: rgba(0,0,0,0.08);
+  --sombra: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode {
+  /* Tema Escuro */
+  --bg-principal: #121212;
+  --bg-secundario: #1e1e1e;
+  --texto-principal: #f5f5f5;
+  --texto-secundario: #cccccc;
+  --sombra: rgba(255, 255, 255, 0.08);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-principal);
+  color: var(--texto-principal);
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--bg-secundario);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--sombra);
+  padding: 30px;
+}
+
+/* texto */
+h1{
+  font-size: 1.5rem;
+  color: var(--rosa-principal);
+  margin-bottom: 20px;
+}
+
+h3{
+  font-size: 1.125rem;
+  color: var(--rosa-principal);
+  margin-bottom: 15px;
+}
+
+h2{
+  font-size: 1.125rem;
+  color: var(--azul-detalhe);
+  margin-top: 20px;
+}
+
+p {
+  margin-top: 10px;
+  color: var(--texto-principal);
+}
+
+a{
+  text-decoration: none
+ 
+}
+a{
+  color: #58ccf8;
+}
+a:hover{
+  color: #EF2F7E;
+}
+
+
+/* voltar */
+.voltar {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 16px;
+  background-color: var(--rosa-principal);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.voltar:hover {
+  background-color: var(--rosa-hover);
+  color: var(--bg-principal);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .voltar {
+    font-size: 0.9rem;
+  }
+}
