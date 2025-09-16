@@ -127,8 +127,66 @@ window.addEventListener("load", () => {
   carregarDadosSalvos();
 });
 
+// MODAL DE PAGAMENTO
+const modalPagamento = document.getElementById("modal-pagamento");
+const tituloPagamento = document.getElementById("titulo-pagamento");
+const descricaoPagamento = document.getElementById("descricao-pagamento");
+
+function abrirModalPagamento(tipo) {
+  let titulo = "";
+  let descricao = "";
+
+  switch (tipo) {
+    case "debito":
+      titulo = "Cartão de Débito";
+      descricao = "Adicione ou gerencie seu cartão de débito.";
+      break;
+    case "credito":
+      titulo = "Cartão de Crédito";
+      descricao = "Cadastre seu cartão de crédito para pagamentos.";
+      break;
+    case "pix":
+      titulo = "Pix";
+      descricao = "Cadastre sua chave Pix para pagamentos instantâneos.";
+      break;
+  }
+
+  tituloPagamento.textContent = titulo;
+  descricaoPagamento.textContent = descricao;
+
+  modalPagamento.style.display = "flex";
+}
+
+function fecharPagamento() {
+  modalPagamento.style.display = "none";
+}
+
+function salvarPagamento() {
+  alert("Método de pagamento salvo com sucesso!");
+  fecharPagamento();
+}
+
+// EXPANDIR/RECOLHER OPÇÕES DE PAGAMENTO
+function togglePagamentos() {
+  const opcoes = document.getElementById("opcoes-pagamento");
+  const seta = document.getElementById("seta-pagamento");
+  const titulo = document.querySelector(".section-title");
+
+  if (opcoes.classList.contains("show")) {
+    opcoes.classList.remove("show");
+    titulo.classList.remove("aberto");
+  } else {
+    opcoes.classList.add("show");
+    titulo.classList.add("aberto");
+  }
+}
+
+
+
 // BOTÃO DE EMERGÊNCIA
 function enviarEmergencia() {
   // Faz ligação para a polícia (190 no Brasil)
   window.location.href = "tel:190";
 }
+
+

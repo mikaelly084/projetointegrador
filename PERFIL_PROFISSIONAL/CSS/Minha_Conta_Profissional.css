@@ -265,6 +265,27 @@ body.dark-mode {
 }
 .btn-emergencia:hover { background: rgb(180,10,10); }
 
+/* Opções de recebimento */
+.opcoes-recebimento {
+  display: none;
+  flex-direction: column;
+}
+
+.opcoes-recebimento .section {
+  margin-left: 30px;
+  background: var(--bg-principal);
+  box-shadow: 3px 3px var(--azul-detalhe);
+}
+
+.opcoes-recebimento.show {
+  display: flex;
+}
+
+.section-title.aberto i:last-child {
+  transform: rotate(180deg);
+}
+
+
 
 @media (max-width: 600px) {
   .profile {

@@ -47,9 +47,37 @@
   <a class="section" href="Me_Ajuda_Profissional.html"><span><i class="fas fa-headset"></i> Me ajuda</span><i class="fas fa-chevron-right"></i></a>
   <a class="section" href="Validar_doc_Profissional.html"><span><i class="fas fa-check-circle"></i> Validação de documentos</span><i class="fas fa-chevron-right"></i></a>
   <a class="section" href="Historico_de_Atendimento.html"><span><i class="fas fa-history"></i> Histórico de Atendimento</span><i class="fas fa-chevron-right"></i></a>
- 
   <a class="section" href="Termos_de_Uso.html"><span><i class="fas fa-file-alt"></i> Termos de uso</span><i class="fas fa-chevron-right"></i></a>
- 
+  <!-- Área de Recebimentos -->
+<div class="section section-title" onclick="toggleRecebimentos()">
+  <span><i class="fas fa-wallet"></i> Recebimentos</span>
+  <i class="fas fa-chevron-down" id="seta-recebimento"></i>
+</div>
+
+<div id="opcoes-recebimento" class="opcoes-recebimento">
+  <div class="section recebimento conta" onclick="abrirModalRecebimento('conta')">
+    <span><i class="fas fa-university"></i> Conta Bancária</span>
+    <i class="fas fa-chevron-right"></i>
+  </div>
+
+  <div class="section recebimento pix" onclick="abrirModalRecebimento('pix')">
+    <span><i class="fas fa-qrcode"></i> Chave Pix</span>
+    <i class="fas fa-chevron-right"></i>
+  </div>
+</div>
+
+<!-- Modal de Recebimentos -->
+<div class="modal-overlay" id="modal-recebimento">
+  <div class="modal">
+    <h2 id="titulo-recebimento">Recebimento</h2>
+    <p id="descricao-recebimento">Selecione a forma de recebimento.</p>
+    <div class="modal-buttons">
+      <button onclick="fecharRecebimento()">Fechar</button>
+      <button onclick="salvarRecebimento()">Salvar</button>
+    </div>
+  </div>
+</div>
+
   <a class="section" id="logout-btn" href="#"><span><i class="fas fa-sign-out-alt"></i> Sair do aplicativo</span><i class="fas fa-chevron-right"></i></a>
 
   <!-- Botão de Emergência -->
@@ -69,8 +97,9 @@
     </div>
   </div>
 
-  <script src="JS/minhaconta.js"></script>
+  
   <script src="JS/dark.js"></script>
   <script src="JS/minhaconta.js"></script>
+  <script src="JS/Minha_Conta_Profissional.js"></script>
 </body>
 </html>

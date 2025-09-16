@@ -297,6 +297,54 @@ nav svg { width: 22px; height: 22px; }
 
   transition: background 0.3s ease, transform 0.2s ease;
 }
+
+/* Opções de pagamento escondidas */
+.opcoes-pagamento {
+  display: none;
+  flex-direction: column;
+}
+
+.opcoes-pagamento .section {
+  margin-left: 30px; /* indentação para mostrar hierarquia */
+  background: var(--bg-principal);
+  box-shadow: 3px 3px var(--azul-detalhe);
+}
+
+.section-title {
+  cursor: pointer;
+}
+
+.section-title i:last-child {
+  transition: transform 0.3s ease;
+}
+
+/* quando expandir */
+.opcoes-pagamento.show {
+  display: flex;
+}
+
+.section-title.aberto i:last-child {
+  transform: rotate(180deg);
+}
+
+/* Modal de pagamento */
+#modal-pagamento .modal {
+  max-width: 400px;
+  width: 90%;
+}
+
+#modal-pagamento .modal h2 {
+  color: var(--rosa-principal);
+  margin-bottom: 10px;
+}
+
+#modal-pagamento .modal p {
+  font-size: 14px;
+  color: var(--texto-secundario);
+  margin-bottom: 20px;
+}
+
+
 .btn-emergencia:hover { background: rgb(180,10,10); }
 
 
@@ -304,6 +352,12 @@ nav svg { width: 22px; height: 22px; }
   .profile {
     flex-direction: column;
     text-align: center;
+  }
+
+  .section-title {
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
   }
  
   .profile-info { margin-top: 10px; }
