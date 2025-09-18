@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novos Pedidos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/solicitacoes.css">
+</head>
+<body>
+  
+  <!-- Cabeçalho -->
+  <header class="header">
+    <h1><i class="fas fa-inbox"></i> Solicitações</h1>
+  </header>
+
+  <!-- Lista de Pedidos -->
+  <section class="pedidos-lista">
+    <div class="pedido-card">
+      <h3>Serviço: Limpeza Residencial</h3>
+      <p><strong>Cliente:</strong> Thamyres Silva</p>
+      <p><strong>Data:</strong> 20/09/2025</p>
+      <div class="acoes">
+        <button onclick="abrirModalSolicitacao('aceitar')" aria-label="Aceitar solicitação">Aceitar</button>
+        <button onclick="abrirModalSolicitacao('recusar')" aria-label="Recusar solicitação">Recusar</button>
+      </div>
+    </div>
+
+    <div class="pedido-card">
+      <h3>Serviço: Manutenção Elétrica</h3>
+      <p><strong>Cliente:</strong> Maria Souza</p>
+      <p><strong>Data:</strong> 21/09/2025</p>
+      <div class="acoes">
+        <button onclick="abrirModalSolicitacao('aceitar')" aria-label="Aceitar solicitação">Aceitar</button>
+        <button onclick="abrirModalSolicitacao('recusar')" aria-label="Recusar solicitação">Recusar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal de Confirmação de Solicitação -->
+  <div class="modal-overlay" id="modal-solicitacao" role="dialog" aria-modal="true">
+    <div class="modal">
+      <h2 id="titulo-solicitacao">Confirmação</h2>
+      <p id="mensagem-solicitacao">Tem certeza que deseja realizar essa ação?</p>
+      <div class="modal-buttons">
+        <button id="btn-ok" type="button">OK</button>
+        <button type="button" onclick="fecharModalSolicitacao()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+  <script src="JS/dark.js"></script>
+  <script>
+    // Abre o modal de confirmação
+    function abrirModalSolicitacao(tipo) {
+      const modal = document.getElementById("modal-solicitacao");
+      const mensagem = document.getElementById("mensagem-solicitacao");
+      const titulo = document.getElementById("titulo-solicitacao");
+      const botaoOk = document.getElementById("btn-ok");
+
+      modal.style.display = "flex";
+
+      if (tipo === "aceitar") {
+        titulo.textContent = "Aceitar Solicitação";
+        mensagem.textContent = "Tem certeza que deseja aceitar esta solicitação?";
+        botaoOk.onclick = () => {
+          alert("Solicitação aceita!");
+          fecharModalSolicitacao();
+        };
+      } else if (tipo === "recusar") {
+        titulo.textContent = "Recusar Solicitação";
+        mensagem.textContent = "Tem certeza que deseja recusar esta solicitação?";
+        botaoOk.onclick = () => {
+          alert("Solicitação recusada!");
+          fecharModalSolicitacao();
+        };
+      }
+    }
+
+    // Fecha o modal
+    function fecharModalSolicitacao() {
+      document.getElementById("modal-solicitacao").style.display = "none";
+    }
+  </script>
+</body>
+</html>
